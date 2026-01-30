@@ -6,7 +6,7 @@
   "name":"create_textevent",
   "parent":{
     "name":"FC_DialogueSystem",
-    "path":"folders/Pacchetto_Zig/Roba generica (o quasi)/FC_DialogueSystem.yy",
+    "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/FC_DialogueSystem.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

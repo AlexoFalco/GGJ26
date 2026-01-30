@@ -15,7 +15,7 @@
   "name":"rm_title",
   "parent":{
     "name":"Pacchetto_Zig",
-    "path":"folders/Pacchetto_Zig.yy",
+    "path":"folders/Libs/Pacchetto_Zig.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

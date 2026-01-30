@@ -216,7 +216,7 @@
   "name":"fnt_annuncino",
   "parent":{
     "name":"font",
-    "path":"folders/Pacchetto_Zig/Roba generica (o quasi)/font.yy",
+    "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/font.yy",
   },
   "pointRounding":0,
   "ranges":[

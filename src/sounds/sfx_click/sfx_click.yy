@@ -15,7 +15,7 @@
   "name":"sfx_click",
   "parent":{
     "name":"suoni",
-    "path":"folders/Pacchetto_Zig/Roba generica (o quasi)/suoni.yy",
+    "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/suoni.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

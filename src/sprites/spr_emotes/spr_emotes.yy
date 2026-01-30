@@ -37,7 +37,7 @@
   "origin":9,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Pacchetto_Zig/Roba generica (o quasi)/FC_DialogueSystem/Sprites.yy",
+    "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/FC_DialogueSystem/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"release_mode_check",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"release_mode_check",
+  "parent":{
+    "name":"Libs",
+    "path":"folders/Libs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

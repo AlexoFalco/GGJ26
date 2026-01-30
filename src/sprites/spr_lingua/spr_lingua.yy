@@ -27,7 +27,7 @@
   "origin":1,
   "parent":{
     "name":"sprite",
-    "path":"folders/Pacchetto_Zig/Roba generica (o quasi)/sprite.yy",
+    "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/sprite.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

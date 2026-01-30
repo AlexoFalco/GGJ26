@@ -15,7 +15,7 @@
   "name":"snd_select",
   "parent":{
     "name":"FC_DialogueSystem",
-    "path":"folders/Pacchetto_Zig/Roba generica (o quasi)/FC_DialogueSystem.yy",
+    "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/FC_DialogueSystem.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
