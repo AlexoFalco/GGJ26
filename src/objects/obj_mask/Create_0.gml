@@ -1,12 +1,15 @@
 enum masks{drago,orco,paladino,cacca,megaman}
 
 x = irandom_range(100,room_width-100);
-y = irandom_range(100,room_height-100);
+y = irandom_range(300,room_height-300);
 
 id_mask = irandom(masks.megaman);
 
 is_touchable = false;
-fall_time = 180;
+
+fall_time = 60;
+fall_delta = 2;
+final_y = y+fall_time*fall_delta
 
 tempo_per_toccare = time_source_create
 (
