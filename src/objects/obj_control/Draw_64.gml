@@ -1,0 +1,1 @@
+disegna_musica(global.guih/2-90,70,130);
