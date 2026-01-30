@@ -23,5 +23,5 @@ else if(release_mode_check(RELEASE_MODE_ENUMS.ALEXO))
 }
 else if(release_mode_check(RELEASE_MODE_ENUMS.MAD))
 {
-    room_goto(room_test_camera)
+    room_goto(room_test_mad)
 }
