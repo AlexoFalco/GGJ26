@@ -11,5 +11,6 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO))
         var _y = room_height/2 + lengthdir_y(_dist, (360/_length)*i);
         var _obj = instance_create_layer(_x, _y, "Instances", obj_player_mad)
         _obj.player = _item.inputid == 0 ? 0 : _item.inputid+1
+        _obj.charid = _item.charid
     }
 }

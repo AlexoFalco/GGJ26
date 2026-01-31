@@ -270,7 +270,7 @@ else
 
 #region ANIMATIONS
 
-var _ind = image_index;
+
 var _a = dcos(direction)
 if (_a != 0)
 {
@@ -286,10 +286,10 @@ if (!_masked)
     {
         case STATE.GUARD:
     	case STATE.TEST_GUARD:
-    		sprite_index = anim_guard[player];
+    		sprite_index = anim_guard[charid];
     		break;
     	case STATE.NORMAL:
-    		sprite_index = anim_walk[player];
+    		sprite_index = anim_walk[charid];
             image_speed = lerp(0, 2, spd/spd_walk_normal) 
             break;
     }
@@ -306,8 +306,17 @@ else
             break;
     }
 }
-if (image_index == 1 && _ind != image_index)
-	part_cloud();
+image_index = image_index mod 2;
+if (image_index >= 1)
+{
+	if (part_ind == noone)
+		part_cloud();
+}
+else
+{
+	part_ind = noone;
+}
+
 #endregion
 
 
