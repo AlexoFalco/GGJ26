@@ -8,7 +8,7 @@ with obj_player_mad
 	else
 	{
 		if mud_factor < 1
-			mud_factor += 0.025;
+			mud_factor += 0.00625;
 	}
 	
 	if mud_factor >= 1
