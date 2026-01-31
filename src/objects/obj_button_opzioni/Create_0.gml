@@ -3,8 +3,8 @@
 
 event_inherited();
 
-text = ["Exit","Esci"]
+text = ["Settings","Opzioni"];
 on_click = function()
 {
-    game_end()
+    room_goto(room_settings);
 }

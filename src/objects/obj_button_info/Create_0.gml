@@ -3,7 +3,7 @@
 
 event_inherited();
 
-text = "How to play"
+text = ["How to play","Come si gioca"];
 on_click = function()
 {
 }

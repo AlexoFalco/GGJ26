@@ -3,8 +3,10 @@
 
 event_inherited();
 
-text = ["Exit","Esci"]
+text = ["Change language","Cambia lingua"];
 on_click = function()
 {
-    game_end()
+    global.language++;
+	if global.language > lang.ita
+		global.language = 0;
 }
