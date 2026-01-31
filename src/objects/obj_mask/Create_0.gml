@@ -4,7 +4,7 @@ enum masks{drago,orco,paladino,cacca,megaman}
 //x = irandom_range(100,room_width-100);
 //y = irandom_range(300,room_height-300);
 
-id_mask = irandom(masks.megaman);
+id_mask = masks.drago;
 
 is_touchable = false;
 

@@ -6,11 +6,11 @@ with other		//se sposti in obj_player, cancella
 		transformation = 0;
 		switch other.id_mask
 		{
-			case masks.drago: tempo_trasformazione = 180; break;
-			case masks.cacca: tempo_trasformazione = 90; break;
-			case masks.orco: tempo_trasformazione = 270; break;
-			case masks.paladino: case masks.megaman: tempo_trasformazione = 60*10; break;
-			default: tempo_trasformazione = 10;
+			case masks.drago: tempo_trasformazione = 60*10; break;
+			//case masks.cacca: tempo_trasformazione = 90; break;
+			//case masks.orco: tempo_trasformazione = 270; break;
+			//case masks.paladino: case masks.megaman: tempo_trasformazione = 60*10; break;
+			default: tempo_trasformazione = 60*10;
 		}
         tempo_trasformazione_max = tempo_trasformazione
 		transformation = other.id_mask;
