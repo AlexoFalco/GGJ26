@@ -3,9 +3,9 @@
   "%Name":"spr_player_m_walk",
   "bboxMode":0,
   "bbox_bottom":242,
-  "bbox_left":26,
-  "bbox_right":240,
-  "bbox_top":24,
+  "bbox_left":15,
+  "bbox_right":239,
+  "bbox_top":4,
   "collisionKind":1,
   "collisionTolerance":0,
   "ConfigValues":{
@@ -28,7 +28,6 @@
   "height":256,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"f90caef7-dde1-4f63-bc2d-3aefc36a6144","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f90caef7-dde1-4f63-bc2d-3aefc36a6144","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"068ac5e5-8cb0-4224-b266-759626129a00","blendMode":0,"displayName":"default","isLocked":false,"name":"068ac5e5-8cb0-4224-b266-759626129a00","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_player_m_walk",
