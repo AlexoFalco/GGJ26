@@ -3,6 +3,8 @@ enum STATE
 	WAIT,
 	NORMAL,
 	DASH,
+	GUARD,
+	TEST_GUARD,
 }
 
 function collision_with_any(_x, _y, _array) {
