@@ -29,6 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"player","filters":[],"listItems":[],"multiselect":false,"name":"player","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"p_state","filters":[],"listItems":[],"multiselect":false,"name":"p_state","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"STATE.NORMAL","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
