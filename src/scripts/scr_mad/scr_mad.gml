@@ -5,6 +5,8 @@ enum STATE
 	DASH,
 	GUARD,
 	TEST_GUARD,
+	BURST,
+	SMASH
 }
 
 function collision_with_any(_x, _y, _array) {
