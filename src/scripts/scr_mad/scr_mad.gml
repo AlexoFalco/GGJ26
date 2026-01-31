@@ -1,3 +1,10 @@
+enum STATE
+{
+	WAIT,
+	NORMAL,
+	DASH,
+}
+
 function collision_with_any(_x, _y, _array) {
     for (var i = 0; i < array_length(_array); ++i) {
         var inst = _array[i];
