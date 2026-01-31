@@ -7,7 +7,7 @@ draw_set_colour(c_white)
 draw_set_font(font_title)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
-draw_text(10, 10, "Crazy mega party game")
+draw_text(10, 10, "Muscle Masquerade")
 
 
 //draw_set_font(font_button)

@@ -36,7 +36,7 @@ camera_set_view_pos(camera_ref, camera_x, camera_y)
 //resize della camera adattive
 var _ww = 1920
 var _hh = 1080
-var _min_camera_scale = 0.8
+var _min_camera_scale = 1
 var _max_camera_scale = 2.5
 var _k_dist = 700
 var _smooth_camera = 2000
