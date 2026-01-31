@@ -3,6 +3,8 @@ anim_guard = [spr_player_1_guard, spr_player_2_guard, spr_player_3_guard, spr_pl
 anim_walk_m = spr_player_m_walk
 sprite_index = anim_walk[0];
 
+arrow_col = [c_green, c_blue, c_red, c_yellow];
+
 //Status vars
 p_health_max = 3;
 p_health = p_health_max;
