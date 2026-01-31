@@ -1,3 +1,5 @@
+#region roba inutile
+#region MENU INIZIALE ZIGOON
 function scr_menuiniziale_step(){
 	
 var primomenu = true;
@@ -146,7 +148,9 @@ else if menuNomi
 }
 
 }
+#endregion
 
+#region ALTRI MENU INUTILI QUI
 function tutorial_draw(){
 	
 	var _teng = @"Welcome to Bug Race!
@@ -305,189 +309,6 @@ function registrazione_draw(){
 	draw_text_border(_guix/2,_guiy*2/3-30,fnt_gioco,nome,,_colnome);
 }
 
-function riconoscimenti_step(){
-	
-	function test_music(){
-		audio_stop_all();
-		switch selemusica
-		{
-			case 1: tema_musicale = snd_windmill; break;
-			case 2: tema_musicale = snd_robobunny; break;	case 3: tema_musicale = snd_funkyisland; break;	case 4: tema_musicale = snd_nightchase; break;
-			case 5: tema_musicale = snd_skeletondance; break;	case 6: tema_musicale = snd_festival; break;	case 7: tema_musicale = snd_breakin; break;
-			case 8: tema_musicale = snd_hauntedengines; break;	case 9: tema_musicale = snd_souleatingdesert; break;	case 10: tema_musicale = snd_starcatching; break;
-			case 0: default: tema_musicale = snd_1080skies;
-		}
-		parte_audio(global.snd,tema_musicale,1,true);
-	}
-	
-	if sxPress
-		selemusica--;
-	if dxPress
-		selemusica++;
-		
-	selemusica = (selemusica + 11) mod (11);
-	
-	if confirmPress
-	{
-		test_music();
-	}
-	
-	if (backPress || pausePress)
-		riconoscimenti = false;
-}
-
-function riconoscimenti_draw(){
-	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
-	_credits = @"Game by Zigoon (Marco Luigi D'Amelio). Almost everything not mentioned here 
-is done by him (if not, he didn't remember it and humbly apologizes).
-
-AI behavior: 
-Goldensun (Aurelio D'Amelio)
-
-Music: 
-Red&Green
-
-Fonts:
-'XLMonoAlt' by fontcollector
-'Bugfast' by Chequered Ink
-'besttime' by khurasantype";
-	draw_text_border(_guix/16,_guiy/2,fnt_annuncino,_credits,,,,,,700,fa_left);
-	
-var _xmus = _guix*13/15, _ymus_i = _guiy*3/7;
-
-	draw_text_border(_xmus,_ymus_i,fnt_annuncino,
-		$"{scr_input(comandi.left)}/{scr_input(comandi.right)}: change music",
-		$"{scr_input(comandi.left)}/{scr_input(comandi.right)}: cambia musica",,,,,100);
-	draw_text_border(_xmus,_ymus_i+30,fnt_grande,selemusica);
-	draw_text_border(_xmus,_ymus_i+70,fnt_annuncino,lista_musiche[selemusica],,,,,,100);
-	
-}
-	
-/*function menu_giocatori_step()
-{
-	if !modalitas_selezionata
-		var i = 1;
-	repeat(4)
-	{
-		obj_control.playerbirth = i;
-		var _pc = instance_create_depth(x,y,depth,obj_playercontrol);
-		with _pc
-		{
-			player = obj_control.playerbirth;
-			scr_comandi();
-		}
-		i++;
-	}
-	modalitas_selezionata = true;
-}*/
-
-function menu_modalita_draw()
-{
-	var _guix = display_get_gui_width(), _guiy = display_get_gui_height();
-	var _numg = [], _i, _yi = [],
-	_eng = ["Grand Prix", "Quick Run", "Time Trial"], 
-	_ita= ["Gran Premio", "Gara Rapida", "Sfida a Tempo"], _colbase = c_white;
-	
-	if menudifficolta
-		_colbase = c_gray;
-	
-	if !modalitas_selezionata
-	{
-		for (_i = 0; _i <= 2; _i++)
-		{
-			if modalitas = _i
-				_numg[_i] = c_red;
-			else
-				_numg[_i] = _colbase;
-			_yi[_i] = 120+(30*_i);
-			draw_text_border(_guix/3,_yi[_i],fnt_gioco,_eng[_i],_ita[_i],_numg[_i]);
-		}
-		var _xq;
-		if !menudifficolta //&& !menugiocatori
-			_xq = _guix/3;
-		else if menudifficolta
-			_xq = _guix*2/3;
-		selezione_modalita_rettangolo(_xq,_guiy/2-20);
-	}
-	else
-	{
-		if !menupiste
-		{
-			disegna_personaggi();
-			if giocatori_pronti = NumGiocatori && !partita_iniziando
-			{
-				draw_set_alpha(0.5);
-				draw_set_color(c_lime);
-				draw_rectangle(0,_guiy/2-20,_guix,_guiy/2+20,false);
-				draw_set_alpha(1);
-				draw_text_border(_guix/2,_guiy/2-10,fnt_gioco,"Countdown","Countdown",c_white,c_red);
-			}
-		}
-		else
-		{
-			disegna_menu_piste();
-			if partita_iniziando && alarm[2] <= 60
-			{
-				if _titpos < _guix/2
-					_titpos+= 10;
-				draw_text_border(_titpos-4,_guiy/2+4,fnt_titolo,"Let's begin!","Iniziamo!",c_dkgray,c_dkgray,,,1000);
-				draw_text_border(_titpos,_guiy/2,fnt_titolo,"Let's begin!","Iniziamo!",c_yellow,c_red,,,1000);
-			}
-		}
-	}
-	
-}
-
-function menu_difficolta_draw()
-{
-	var _guix = display_get_gui_width()*2/3, _guiy = display_get_gui_height();
-	var _numg = [], _i, _yi = [],
-	_eng = [/*"Very Easy",*/"Easy", "Normal", "Hard"/*,"Very Hard","Impossible"*/], 
-	_ita= [/*"Molto facile",*/"Facile", "Normale", "Difficile",/*"Molto difficile","Impossibile"*/],
-	c_base = c_white;
-	
-	if !menudifficolta
-		c_base = c_gray;
-		
-	if !modalitas_selezionata
-	{
-		for (_i = 0; _i <= 2; _i++)
-		{
-			if difficoltas= _i
-				_numg[_i] = c_red;
-			else
-				_numg[_i] = c_base;
-			_yi[_i] = 120+(30*_i);
-			draw_text_border(_guix,_yi[_i],fnt_gioco,_eng[_i],_ita[_i],_numg[_i]);
-		}
-	}
-}
-
-function menu_giocatori_draw()
-{
-	/*var _guix = display_get_gui_width(), _guiy = display_get_gui_height();
-	var _numg = [], _i, _yi = [],
-	_eng = ["Solo Mode", "2-player mode", "3-player mode", "4-player mode"], 
-	_ita= ["1 giocatore", "2 giocatori", "3 giocatori", "4 giocatori"];
-	if !modalitas_selezionata
-	{
-		for (_i = 0; _i <= 3; _i++)
-		{
-			if numgio-1 = _i
-				_numg[_i] = c_red;
-			else
-				_numg[_i] = c_white;
-			_yi[_i] = 105+(30*_i);
-			draw_text_border(3*_guix/4,_yi[_i],fnt_gioco,_eng[_i],_ita[_i],_numg[_i]);
-		}
-		if numgio > 2
-		draw_text_border(_guix*3/4,_yi[3]+40,fnt_annuncino,
-		"TIP: if you are more than 2 players, we suggest you use controllers!",
-		"CONSIGLIO: se siete più di due giocatori, consigliamo di usare dei controller!",
-		,,,,200);
-	}*/
-}
-
 function menu_nomi_step()
 {
 	if !scrivendo
@@ -620,7 +441,175 @@ function selezione_modalita_rettangolo(_xx, _yy){
 	draw_line_width(_xx-_l,_yy-_h,_xx-_l,_yy+_h,_w);
 	draw_line_width(_xx+_l,_yy-_h,_xx+_l,_yy+_h,_w);
 }
+function menu_modalita_draw()
+{
+	var _guix = display_get_gui_width(), _guiy = display_get_gui_height();
+	var _numg = [], _i, _yi = [],
+	_eng = ["Grand Prix", "Quick Run", "Time Trial"], 
+	_ita= ["Gran Premio", "Gara Rapida", "Sfida a Tempo"], _colbase = c_white;
+	
+	if menudifficolta
+		_colbase = c_gray;
+	
+	if !modalitas_selezionata
+	{
+		for (_i = 0; _i <= 2; _i++)
+		{
+			if modalitas = _i
+				_numg[_i] = c_red;
+			else
+				_numg[_i] = _colbase;
+			_yi[_i] = 120+(30*_i);
+			draw_text_border(_guix/3,_yi[_i],fnt_gioco,_eng[_i],_ita[_i],_numg[_i]);
+		}
+		var _xq;
+		if !menudifficolta //&& !menugiocatori
+			_xq = _guix/3;
+		else if menudifficolta
+			_xq = _guix*2/3;
+		selezione_modalita_rettangolo(_xq,_guiy/2-20);
+	}
+	else
+	{
+		if !menupiste
+		{
+			disegna_personaggi();
+			if giocatori_pronti = NumGiocatori && !partita_iniziando
+			{
+				draw_set_alpha(0.5);
+				draw_set_color(c_lime);
+				draw_rectangle(0,_guiy/2-20,_guix,_guiy/2+20,false);
+				draw_set_alpha(1);
+				draw_text_border(_guix/2,_guiy/2-10,fnt_gioco,"Countdown","Countdown",c_white,c_red);
+			}
+		}
+		else
+		{
+			disegna_menu_piste();
+			if partita_iniziando && alarm[2] <= 60
+			{
+				if _titpos < _guix/2
+					_titpos+= 10;
+				draw_text_border(_titpos-4,_guiy/2+4,fnt_titolo,"Let's begin!","Iniziamo!",c_dkgray,c_dkgray,,,1000);
+				draw_text_border(_titpos,_guiy/2,fnt_titolo,"Let's begin!","Iniziamo!",c_yellow,c_red,,,1000);
+			}
+		}
+	}
+	
+}
 
+function menu_difficolta_draw()
+{
+	var _guix = display_get_gui_width()*2/3, _guiy = display_get_gui_height();
+	var _numg = [], _i, _yi = [],
+	_eng = [/*"Very Easy",*/"Easy", "Normal", "Hard"/*,"Very Hard","Impossible"*/], 
+	_ita= [/*"Molto facile",*/"Facile", "Normale", "Difficile",/*"Molto difficile","Impossibile"*/],
+	c_base = c_white;
+	
+	if !menudifficolta
+		c_base = c_gray;
+		
+	if !modalitas_selezionata
+	{
+		for (_i = 0; _i <= 2; _i++)
+		{
+			if difficoltas= _i
+				_numg[_i] = c_red;
+			else
+				_numg[_i] = c_base;
+			_yi[_i] = 120+(30*_i);
+			draw_text_border(_guix,_yi[_i],fnt_gioco,_eng[_i],_ita[_i],_numg[_i]);
+		}
+	}
+}
+
+function menu_giocatori_draw()
+{
+	/*var _guix = display_get_gui_width(), _guiy = display_get_gui_height();
+	var _numg = [], _i, _yi = [],
+	_eng = ["Solo Mode", "2-player mode", "3-player mode", "4-player mode"], 
+	_ita= ["1 giocatore", "2 giocatori", "3 giocatori", "4 giocatori"];
+	if !modalitas_selezionata
+	{
+		for (_i = 0; _i <= 3; _i++)
+		{
+			if numgio-1 = _i
+				_numg[_i] = c_red;
+			else
+				_numg[_i] = c_white;
+			_yi[_i] = 105+(30*_i);
+			draw_text_border(3*_guix/4,_yi[_i],fnt_gioco,_eng[_i],_ita[_i],_numg[_i]);
+		}
+		if numgio > 2
+		draw_text_border(_guix*3/4,_yi[3]+40,fnt_annuncino,
+		"TIP: if you are more than 2 players, we suggest you use controllers!",
+		"CONSIGLIO: se siete più di due giocatori, consigliamo di usare dei controller!",
+		,,,,200);
+	}*/
+}
+#endregion
+#region RICONOSCIMENTI
+function riconoscimenti_step(){
+	
+	function test_music(){
+		audio_stop_all();
+		switch selemusica
+		{
+			case 1: tema_musicale = snd_windmill; break;
+			case 2: tema_musicale = snd_robobunny; break;	case 3: tema_musicale = snd_funkyisland; break;	case 4: tema_musicale = snd_nightchase; break;
+			case 5: tema_musicale = snd_skeletondance; break;	case 6: tema_musicale = snd_festival; break;	case 7: tema_musicale = snd_breakin; break;
+			case 8: tema_musicale = snd_hauntedengines; break;	case 9: tema_musicale = snd_souleatingdesert; break;	case 10: tema_musicale = snd_starcatching; break;
+			case 0: default: tema_musicale = snd_1080skies;
+		}
+		parte_audio(global.snd,tema_musicale,1,true);
+	}
+	
+	if sxPress
+		selemusica--;
+	if dxPress
+		selemusica++;
+		
+	selemusica = (selemusica + 11) mod (11);
+	
+	if confirmPress
+	{
+		test_music();
+	}
+	
+	if (backPress || pausePress)
+		riconoscimenti = false;
+}
+
+function riconoscimenti_draw(){
+	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
+	_credits = @"Game by Zigoon (Marco Luigi D'Amelio). Almost everything not mentioned here 
+is done by him (if not, he didn't remember it and humbly apologizes).
+
+AI behavior: 
+Goldensun (Aurelio D'Amelio)
+
+Music: 
+Red&Green
+
+Fonts:
+'XLMonoAlt' by fontcollector
+'Bugfast' by Chequered Ink
+'besttime' by khurasantype";
+	draw_text_border(_guix/16,_guiy/2,fnt_annuncino,_credits,,,,,,700,fa_left);
+	
+var _xmus = _guix*13/15, _ymus_i = _guiy*3/7;
+
+	draw_text_border(_xmus,_ymus_i,fnt_annuncino,
+		$"{scr_input(comandi.left)}/{scr_input(comandi.right)}: change music",
+		$"{scr_input(comandi.left)}/{scr_input(comandi.right)}: cambia musica",,,,,100);
+	draw_text_border(_xmus,_ymus_i+30,fnt_grande,selemusica);
+	draw_text_border(_xmus,_ymus_i+70,fnt_annuncino,lista_musiche[selemusica],,,,,,100);
+	
+}
+#endregion
+
+
+#region PAUSA
 function scr_menu_pausa_step(){
 	
 
@@ -796,7 +785,7 @@ function menu_pausa_draw(_xx = display_get_gui_width()/2, _yy = display_get_gui_
 	}
 	
 }
-
+#endregion
 function rettangolo_opzioni()
 {
 	if vedistat
@@ -827,42 +816,21 @@ function rettangolo_opzioni()
 		draw_rectangle(_rx,_ry,_rx+40,_ry+40,true);
 	}
 }
-
+#endregion
 function scr_impostazioni_step()
 {
-	if regola_musica = false && regola_sfx = false && scrivendo = false
+	if regola_musica = false && regola_sfx = false
 	{
 		if upPress
 		{
 			selimpostazioni--;
-			if selimpostazioni < IMPOST.MUSICA
-				selimpostazioni = IMPOST.FATTO;
 		}
 		else if downPress
 		{
 			selimpostazioni++;
-			if selimpostazioni > IMPOST.FATTO
-				selimpostazioni = IMPOST.MUSICA;
-		}
-		else if dxPress
-		{
-			selimpostazioni++;
-			if selimpostazioni = IMPOST.SFX
-				selimpostazioni++;
-			if selimpostazioni > IMPOST.FATTO
-				selimpostazioni = IMPOST.MUSICA;
-		}
-		else if sxPress
-		{
-			selimpostazioni--;
-			if selimpostazioni > IMPOST.FATTO
-				selimpostazioni = IMPOST.MUSICA;
 		}
 		
-		selimpostazioni = max(0,selimpostazioni+IMPOST.FATTO mod IMPOST.FATTO);
-		
-		if selectPress
-			aiuto_guida = !aiuto_guida;
+		selimpostazioni = (selimpostazioni+IMPOST.FATTO+1) mod (IMPOST.FATTO+1);
 	
 		if confirmPress
 		{
@@ -887,11 +855,7 @@ function scr_impostazioni_step()
 		}
 		
 		if backPress && !scrivendo && !regola_musica && !regola_sfx
-			impostazioni = false;
-	}
-	else if scrivendo
-	{
-		scr_scrivinome();
+			room_goto(room_menu_main);
 	}
 	else if regola_musica
 	{
@@ -902,7 +866,7 @@ function scr_impostazioni_step()
 		if confirmPress	
 		{
 			suono_click();
-			scr_salva_volume();
+			//scr_salva_volume();
 			regola_musica = false;
 		}
 	}
@@ -915,9 +879,12 @@ function scr_impostazioni_step()
 		if confirmPress
 		{
 			suono_click();
-			scr_salva_volume();
 			regola_sfx = false;
 		}
+	}
+	else if regola_durata
+	{
+		
 	}
 }
 
@@ -925,7 +892,9 @@ function scr_impostazioni_draw()
 {
 	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
 	_sel = [], bandiera, 
-	_aiue, _aiui, _colai = c_green, _colnome = c_white, _fse, _fsi, _colfs = c_red;
+	_aiue, _aiui, _colai = c_green, _colnome = c_white, _fse, _fsi, _colfs = c_red,
+	
+	opzioni = [["Music volume","Volume musica"],["Sound effects volume","Volume effetti sonori"],["Game length","Durata partita"],["Done","Fatto"]];
 	
 	draw_set_alpha(0.5);
 	draw_rectangle_color(20,20,_guix-20,_guiy-60,c_green,c_aqua,c_green,c_aqua,false);
@@ -940,52 +909,12 @@ function scr_impostazioni_draw()
 			_sel[_i] = c_red;
 		else
 			_sel[_i] = c_white;
-	}
-
-	
-	switch global.language
-	{
-		case lang.eng: bandiera = 0; break;
-		case lang.ita: bandiera = 1; break;
-	}
-	draw_sprite_ext(spr_lingua,bandiera,_guix/2,180,0.25,0.25,0,c_white,1);
-	
-	if aiuto_guida
-	{
-		_aiue = "ON";
-		_aiui = "ATTIVI";
-		_colai = c_green;
-	}
-	else
-	{
-		_aiue = "OFF";
-		_aiui = "NON ATTIVI";
-		_colai = c_red;
+		
+		draw_text_border(_guix/2,	global.guih/4+90*_i,		fnt_gioco,	opzioni[_i][global.language],,			_sel[_i]);
 	}
 	
-	if window_get_fullscreen()
-	{
-		_fse = "ON";
-		_fsi = "ATTIVO";
-		_colfs = c_green;
-	}
-	else
-	{
-		_fse = "OFF";
-		_fsi = "DISATTIVO";
-		_colfs = c_red;
-	}
 	
-	draw_text_border(_guix/2,	30,		fnt_gioco,	"Music",			"Musica",			_sel[0]);
-	draw_text_border(_guix/2,	90,		fnt_gioco,	"Sound effects",	"Effetti sonori",	_sel[1]);
-	//draw_text_border(2*_guix/3,	30,		fnt_gioco,	"Name",				"Nome",				_sel[2]);
-	draw_text_border(_guix/2,	150,	fnt_gioco,	"Language",			"Lingua",			_sel[2]);
-	//draw_text_border(2*_guix/3,	150,	fnt_gioco,	"P1 Controls",		"Comandi G1",		_sel[3]);
-	draw_text_border(2*_guix/3,	220,	fnt_gioco,	"Help",		"Aiuti",	_sel[4]);
-	draw_text_border(_guix/3,	220,	fnt_gioco,	"Full screen mode", "Schermo intero",	_sel[3]);
-	draw_text_border(_guix/2,	280,	fnt_gioco,	"Done",				"Fatto",			_sel[5]);
-	draw_text_border(_guix/3,	250,	fnt_gioco,	_fse,				_fsi,				_colfs);
-	draw_text_border(2*_guix/3,	250,	fnt_gioco,	_aiue,				_aiui,				_colai);
+	
 	
 	{//debug
 	//debug_text($"{selimpostazioni}",30,30);
