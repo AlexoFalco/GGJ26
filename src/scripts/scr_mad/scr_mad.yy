@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_mad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_mad",
+  "parent":{
+    "name":"GGJ26",
+    "path":"GGJ26.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
