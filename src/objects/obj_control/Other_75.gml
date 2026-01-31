@@ -7,7 +7,6 @@ switch(eventType)
     case ("gamepad discovered"):
         padIndex = ds_map_find_value(async_load, "pad_index")
         padEnabled = true
-        show_message(padIndex)
         //if (instance_exists(ob_menu_page_main_options))
         //{
             //ob_menu_page_main_options.refresh(OPTIONS_SUBPAGE_ENUM.inputs)

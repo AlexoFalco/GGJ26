@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"font_button",
+  "%Name":"font_text",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":30,
@@ -237,10 +237,10 @@
   "last":0,
   "lineHeight":37,
   "maintainGms1Font":false,
-  "name":"font_button",
+  "name":"font_text",
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Menu/Buttons.yy",
+    "name":"Fonts",
+    "path":"folders/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -191,8 +191,8 @@
   "maintainGms1Font":false,
   "name":"font_button",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "name":"Buttons",
+    "path":"folders/Menu/Buttons.yy",
   },
   "pointRounding":0,
   "ranges":[

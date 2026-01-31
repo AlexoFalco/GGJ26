@@ -10,8 +10,8 @@
   "name":"obj_menu_gameoptions",
   "overriddenProperties":[],
   "parent":{
-    "name":"Main menu",
-    "path":"folders/Main menu.yy",
+    "name":"Menu",
+    "path":"folders/Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
