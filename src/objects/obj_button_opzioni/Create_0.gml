@@ -6,5 +6,6 @@ event_inherited();
 text = ["Settings","Opzioni"];
 on_click = function()
 {
+	obj_control.impostazioni = true;
     room_goto(room_settings);
 }

@@ -1,7 +1,7 @@
 scr_comandi();
 scr_volume_bstep();
 
-if room = room_arena
+if room = room_game
 {
 	if !startedSession && timeSession = timeSessionBase
 		time_source_start(inizio_partita);
@@ -16,3 +16,11 @@ if room = room_arena
 		timer_inizio--;
 	
 }
+
+if room = room_settings
+	impostazioni = true;
+else
+	impostazioni = false;
+	
+if impostazioni
+	scr_impostazioni_step();

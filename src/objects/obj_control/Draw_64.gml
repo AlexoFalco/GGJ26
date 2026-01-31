@@ -1,5 +1,5 @@
 //disegna_musica(global.guih/2-90,70,130);
-if room = room_arena
+if room = room_game
 {
 	if startedSession
 	{
@@ -22,3 +22,7 @@ if room = room_arena
 		draw_text_border(global.guiw/2,global.guih/2,font_title,timer_inizio div 60,,,,3)
 	}
 }
+
+
+	
+	
