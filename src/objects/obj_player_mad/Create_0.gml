@@ -42,3 +42,9 @@ part_cloud = function()
 {
 	instance_create_depth(x+random_range(-40, 40), y+12, depth+1, obj_part_cloud);
 }
+
+
+#region FANGO
+mud_factor = 1;
+mudded = false;
+#endregion

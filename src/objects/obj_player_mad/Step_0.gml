@@ -75,7 +75,7 @@ if (_masked)
 					spd -= decel;
 	
 			}
-			spd += accel*stick_dist;
+			spd += accel*stick_dist*mud_factor;
 			spd = clamp(spd, 0, spd_walk);
 		
 			p_dash_timer++;
@@ -168,7 +168,7 @@ else
 					spd -= decel;
 	
 			}
-			spd += accel*stick_dist;
+			spd += accel*stick_dist*mud_factor;
 			spd = clamp(spd, 0, spd_walk);
 		
 			p_dash_timer++;
@@ -270,7 +270,7 @@ else
 
 #region ANIMATIONS
 
-var _ind = image_index;
+
 var _a = dcos(direction)
 if (_a != 0)
 {
@@ -306,8 +306,17 @@ else
             break;
     }
 }
-if (image_index == 1 && _ind != image_index)
-	part_cloud();
+image_index = image_index mod 2;
+if (image_index >= 1)
+{
+	if (part_ind == noone)
+		part_cloud();
+}
+else
+{
+	part_ind = noone;
+}
+
 #endregion
 
 

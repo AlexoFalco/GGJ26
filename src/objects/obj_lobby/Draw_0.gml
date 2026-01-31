@@ -24,5 +24,10 @@ draw_text(10, 10, "Lobby")
 if (countdown_to_start_flag)
 {
     draw_set_halign(fa_right)
-    draw_text(1920-50, 1080-100, floor((countdown_to_start_max - countdown_to_start)/60))
+    var _value = floor((countdown_to_start_max - countdown_to_start)/60)
+    if (_value == 0)
+    {
+        _value = "Go!"
+    }
+    draw_text(1920-50, 1080-100, _value)
 }

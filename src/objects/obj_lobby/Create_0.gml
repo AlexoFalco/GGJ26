@@ -10,7 +10,7 @@ players_list = []
 
 chars_list = [0, 1, 2, 3]
 
-countdown_to_start_max = 60*3
+countdown_to_start_max = 210
 countdown_to_start_flag = false
 countdown_to_start = noone
 
