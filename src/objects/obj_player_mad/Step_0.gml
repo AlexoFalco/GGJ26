@@ -270,11 +270,13 @@ else
 
 #region ANIMATIONS
 
+var _ind = image_index;
 var _a = dcos(direction)
 if (_a != 0)
 {
     image_xscale = sign(_a)
 }
+
 
 if (!_masked)
 {
@@ -304,7 +306,8 @@ else
             break;
     }
 }
-
+if (image_index == 1 && _ind != image_index)
+	part_cloud();
 #endregion
 
 

@@ -40,5 +40,5 @@ tempo_trasformazione = 0;
 
 part_cloud = function()
 {
-	
+	instance_create_depth(x+random_range(-40, 40), y+12, depth+1, obj_part_cloud);
 }
