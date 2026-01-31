@@ -33,7 +33,12 @@ lerp_spd = 0.2;
 //Anim vars
 image_speed = 0;
 
-charid = 0
-inputid = 0
+charid = 0;
+inputid = 0;
 
-tempo_trasformazione = 0
+tempo_trasformazione = 0;
+
+part_cloud = function()
+{
+	
+}

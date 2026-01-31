@@ -11,24 +11,24 @@ var stick_dir = point_direction(0, 0, haxis, vaxis);
 var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
 
 var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs(vaxis) > 0);
+var _masked = (tempo_trasformazione > 0);
 
 
-if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
-{
-	p_state = STATE.DASH;
-	spd = spd_dash;
-}
-
-if (backPress && p_state == STATE.NORMAL && p_guard_timer == p_guard_timer_max)
-{
-	if (spd != 0)
-		spd = spd/2;
-	p_state = STATE.GUARD;
-}
-
-var _masked = tempo_trasformazione > 0
 if (_masked)
 {
+	if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
+	{
+		p_state = STATE.BURST;
+		spd = spd_dash;
+	}
+
+	if (backPress && p_state == STATE.NORMAL && p_guard_timer == p_guard_timer_max)
+	{
+		if (spd != 0)
+			spd = spd/2;
+		p_state = STATE.SMASH;
+	}
+	
     tempo_trasformazione--;
     spd_walk = spd_walk_mask;
     accel = accel_mask;
@@ -98,14 +98,31 @@ if (_masked)
 			break;
 		#endregion
 	
-		#region DASH
-		case STATE.DASH:
+		#region BURST
+		case STATE.BURST:
+			break;
+		#endregion
+		
+		#region SMASH
+		case STATE.SMASH:
 			break;
 		#endregion
 	}
 }
 else 
 {
+	if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
+	{
+		p_state = STATE.DASH;
+		spd = spd_dash;
+	}
+
+	if (backPress && p_state == STATE.NORMAL && p_guard_timer == p_guard_timer_max)
+	{
+		if (spd != 0)
+			spd = spd/2;
+		p_state = STATE.GUARD;
+	}
 	spd_walk = spd_walk_normal;
     accel = accel_normal;
     spd_walk_lerp = spd_walk_lerp_normal;
