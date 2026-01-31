@@ -44,6 +44,7 @@ charid = 0;
 inputid = 0;
 
 tempo_trasformazione = 0;
+tempo_trasformazione_max = 0
 
 part_ind = false;
 part_cloud = function()

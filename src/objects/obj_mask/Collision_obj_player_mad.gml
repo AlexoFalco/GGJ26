@@ -9,9 +9,10 @@ with other		//se sposti in obj_player, cancella
 			case masks.drago: tempo_trasformazione = 180; break;
 			case masks.cacca: tempo_trasformazione = 90; break;
 			case masks.orco: tempo_trasformazione = 270; break;
-			case masks.paladino: case masks.megaman: tempo_trasformazione = 120; break;
+			case masks.paladino: case masks.megaman: tempo_trasformazione = 60*10; break;
 			default: tempo_trasformazione = 10;
 		}
+        tempo_trasformazione_max = tempo_trasformazione
 		transformation = other.id_mask;
 		tempo_detrasformazione = time_source_create
 		(
