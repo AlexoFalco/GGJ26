@@ -819,7 +819,7 @@ function rettangolo_opzioni()
 #endregion
 function scr_impostazioni_step()
 {
-	if regola_musica = false && regola_sfx = false
+	if regola_musica = false && regola_sfx = false && !regola_durata
 	{
 		if upPress
 		{
@@ -854,7 +854,7 @@ function scr_impostazioni_step()
 			}
 		}
 		
-		if backPress && !scrivendo && !regola_musica && !regola_sfx
+		if backPress && !scrivendo && !regola_musica && !regola_sfx && !regola_durata
 			room_goto(room_menu_main);
 	}
 	else if regola_musica
@@ -863,7 +863,7 @@ function scr_impostazioni_step()
 			abbassa_musica();
 		else if dxPress
 			alza_musica();
-		if confirmPress	
+		if confirmPress	|| backPress || pausePress
 		{
 			suono_click();
 			//scr_salva_volume();
@@ -876,7 +876,7 @@ function scr_impostazioni_step()
 			abbassa_effetti();
 		else if dxPress
 			alza_effetti();
-		if confirmPress
+		if confirmPress || backPress || pausePress
 		{
 			suono_click();
 			regola_sfx = false;
@@ -884,7 +884,15 @@ function scr_impostazioni_step()
 	}
 	else if regola_durata
 	{
-		
+		if sxPress && timeSessionBase > 3599
+			timeSessionBase-=3600;
+		else if dxPress && timeSessionBase < 35999
+			timeSessionBase+=3600;
+		if backPress || confirmPress || pausePress
+		{
+			suono_click();
+			regola_durata = false;
+		}
 	}
 }
 
@@ -892,16 +900,21 @@ function scr_impostazioni_draw()
 {
 	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
 	_sel = [], bandiera, 
-	_aiue, _aiui, _colai = c_green, _colnome = c_white, _fse, _fsi, _colfs = c_red,
+	_aiue, _aiui, _colai = c_green, _colnome = c_white, _coldur = c_white,
 	
-	opzioni = [["Music volume","Volume musica"],["Sound effects volume","Volume effetti sonori"],["Game length","Durata partita"],["Done","Fatto"]];
+	opzioni = [["Music volume","Volume musica"],["Sound effects volume","Volume effetti sonori"],["Game length","Durata partita"],["Done","Fatto"]],
 	
-	draw_set_alpha(0.5);
-	draw_rectangle_color(20,20,_guix-20,_guiy-60,c_green,c_aqua,c_green,c_aqua,false);
-	draw_set_alpha(1);
-	draw_rectangle_color(20,20,_guix-20,_guiy-60,c_black,c_black,c_black,c_black,true);
+	_sing = "i";
 	
-	disegna_musica(_guix/2-90,70,130);
+	if timeSessionBase <= 3600
+		_sing = "o"
+		
+	if regola_durata
+		_coldur = c_green;
+	
+	
+	disegna_musica(_guix/2-90,global.guih/4,global.guih/4+90);
+	draw_text_border(global.guiw/2-90,	global.guih/4+180,font_text,$"{(timeSessionBase+1) div 3600} minutes",$"{(timeSessionBase+1) div 3600} minut{_sing}",_coldur,,,,,fa_left);
 	
 	for (var _i = 0; _i <= IMPOST.FATTO; _i++)
 	{
@@ -910,9 +923,12 @@ function scr_impostazioni_draw()
 		else
 			_sel[_i] = c_white;
 		
-		draw_text_border(_guix/2,	global.guih/4+90*_i,		fnt_gioco,	opzioni[_i][global.language],,			_sel[_i]);
+		draw_text_border(global.guiw/8,	global.guih/4+90*_i,		font_text,	opzioni[_i][global.language],,			_sel[_i],,,,,fa_left);
 	}
 	
+	draw_text_border(global.guiw/3,global.guih/16,font_title,"Settings","Impostazioni");
+	draw_text_border(global.guiw/8,2*global.guih/3,font_text,$"{scr_input(comandi.A)}: select        {scr_input(comandi.B,lang.eng)}: exit",
+	$"{scr_input(comandi.A,lang.ita)}: seleziona       {scr_input(comandi.B,lang.ita)}: esci")
 	
 	
 	

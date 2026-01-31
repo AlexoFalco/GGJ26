@@ -179,7 +179,7 @@ for (iv = 0; iv < global.tacchevol; iv+=1)
 }
 
 function suono_click(){
-	parte_audio(global.sfx,sfx_click,1,false);	
+	parte_audio(global.sfx,sfx_click,1,false,0.20);	
 }
 
 function posizioni_audio_iniziali(){

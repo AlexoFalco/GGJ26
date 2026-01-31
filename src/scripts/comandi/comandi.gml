@@ -131,10 +131,10 @@ function scr_input(_c, _l = lang.eng){
 	];
 	allButtons =	[gp_padu,	gp_padd,	gp_padl,		gp_padr,		gp_face1,	gp_face2,	gp_face3,	gp_start,		gp_select];
 	
-	allButtonsNintendo = ["0","1","2","3","4","5","6","7","8","9","A","B","C"];
-	allButtonsSteam = ["0","1","2","3","4","5","6","7","8","9","A","B","C"];
-	allButtonsSony = ["0","1","2","3","4","5","6","7","8","9","A","B","C"];
-	allButtonsGamepad = ["0","1","2","3","4","5","6","7","9","A", "B","C"]
+	allButtonsNintendo = [["up","su"],["down","giù"],["left","sx"],["right","dx"],["A","A"],["B","B"],["X","X"],["+","+"],["-","-"], ["L/R", "L/R"]];
+	allButtonsSteam = [["up","su"],["down","giù"],["left","sx"],["right","dx"],["A","A"],["B","B"],["X","X"],["START","START"],["SELECT","SELECT"], ["L1/R1", "L1/R1"]];
+	allButtonsSony = [["up","su"],["down","giù"],["left","sx"],["right","dx"],["✖","✖"],["◯","◯"],["■","■"],["START","START"],["SELECT","SELECT"], ["L1/R1", "L1/R1"]];
+	allButtonsGamepad = ["1","2","3","4","5","6","7","9","A", "B"]
 	
 	colorButtons =	[c_white,	c_white,	c_white,		c_white,		c_blue,		c_red,		c_fuchsia,	c_white,		c_white];
 	
@@ -144,37 +144,12 @@ function scr_input(_c, _l = lang.eng){
 	}
 	else
 	{
-		{//tasti disegnati
-		/*var _gc = gamepad_get_description(player), _tasti;
-		switch _gc
-		{
-			case "NINTENDO SWITCH(R) PRO CONTROLLER": _tasti = global.tastiNintendo; break;
-			case "PLAYSTATION(R)3 CONTROLLER": case "PLAYSTATION(R)4 CONTROLLER": case "PLAYSTATION(R)5 CONTROLLER": _tasti = global.tastiSony; break;
-			default: _tasti = global.tastiSteam;
-		}
-		comando[_c] = draw_sprite_ext(_tasti,_c,_dx,_dy,0.5,0.5,0,colorButtons[_c],1);*/
-		}
-		
-		//draw_set_font(global.tastiSteam);
-		//comando = allButtonsGamepad[_c];
-		//draw_set_font(_fontdiprima);
 		var _controller, _gc = gamepad_get_description(player);
 		switch _gc
 		{
-			case "NINTENDO SWITCH(R) PRO CONTROLLER": 
-			{
-				draw_set_font(global.tastiNintendo);	
-				_controller = allButtonsNintendo[_c];
-			} break;
-			case "PLAYSTATION(R)3 CONTROLLER": case "PLAYSTATION(R)4 CONTROLLER": case "PLAYSTATION(R)5 CONTROLLER": 
-			{
-				draw_set_font(global.tastiSony);	
-				_controller = allButtonsSony[_c];
-			} break;
-			default: {
-				draw_set_font(global.tastiSteam); 
-				_controller = allButtonsSteam[_c]
-			};
+			case "NINTENDO SWITCH(R) PRO CONTROLLER": _controller = allButtonsNintendo[_c][_l]; break;
+			case "PLAYSTATION(R)3 CONTROLLER": case "PLAYSTATION(R)4 CONTROLLER": case "PLAYSTATION(R)5 CONTROLLER": _controller = allButtonsSony[_c][_l]; break;
+			default: _controller = allButtonsSteam[_c][_l];
 		}
 		
 		
