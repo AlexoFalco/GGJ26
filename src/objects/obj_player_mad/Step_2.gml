@@ -1,0 +1,1 @@
+anim_ind = image_index;

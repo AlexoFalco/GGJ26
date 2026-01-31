@@ -39,7 +39,10 @@ inputid = 0;
 
 tempo_trasformazione = 0;
 
+
+part_ind = false;
 part_cloud = function()
 {
+	part_ind = true;
 	instance_create_depth(x+random_range(-40, 40), y+12, depth-1, obj_part_cloud);
 }
