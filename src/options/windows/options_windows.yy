@@ -6,6 +6,10 @@
       "option_windows_start_fullscreen":"true",
       "option_windows_display_cursor":"false",
     },
+    "Alexo":{
+      "option_windows_start_fullscreen":"false",
+      "option_windows_display_cursor":"false",
+    },
   },
   "name":"Windows",
   "option_windows_allow_fullscreen_switching":false,

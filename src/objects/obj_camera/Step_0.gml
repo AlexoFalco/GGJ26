@@ -39,7 +39,7 @@ var _hh = 1080
 var _min_camera_scale = 1
 var _max_camera_scale = 2.5
 var _k_dist = 700
-var _smooth_camera = 2000
+var _smooth_camera = 1600
 var _inc_camera = 0.01
 var _a = 200
 
@@ -52,6 +52,6 @@ with(obj_player_mad)
     }
 }
 camera_size = lerp(_min_camera_scale, _max_camera_scale, max(players_max_distance-_k_dist, 0)/_smooth_camera)
-camera_size = clamp(camera_size, _min_camera_scale, _max_camera_scale)
+//camera_size = clamp(camera_size, _min_camera_scale, _max_camera_scale)
 
 camera_set_view_size(camera_ref, _ww*camera_size, _hh*camera_size)
