@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"GGJ26",
-    "path":"GGJ26.yyp",
+    "name":"mad",
+    "path":"folders/mad.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

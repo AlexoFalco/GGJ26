@@ -4,13 +4,14 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_player_mad",
   "overriddenProperties":[],
   "parent":{
-    "name":"GGJ26",
-    "path":"GGJ26.yyp",
+    "name":"mad",
+    "path":"folders/mad.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -26,14 +27,19 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"player_id","filters":[],"listItems":[],"multiselect":false,"name":"player_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
+    "name":"spr_player_1_walk",
+    "path":"sprites/spr_player_1_walk/spr_player_1_walk.yy",
+  },
+  "spriteMaskId":{
     "name":"mask_player",
     "path":"sprites/mask_player/mask_player.yy",
   },
-  "spriteMaskId":null,
   "visible":true,
 }

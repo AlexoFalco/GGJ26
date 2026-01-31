@@ -6,8 +6,8 @@
   "name":"obj_collider",
   "overriddenProperties":[],
   "parent":{
-    "name":"GGJ26",
-    "path":"GGJ26.yyp",
+    "name":"mad",
+    "path":"folders/mad.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -23,7 +23,9 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"isSolid","filters":[],"listItems":[],"multiselect":false,"name":"isSolid","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
