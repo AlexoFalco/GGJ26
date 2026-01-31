@@ -22,5 +22,9 @@ decel = 1;
 xx = 0;
 yy = 0;
 
+
 //Anim vars
 image_speed = 0;
+
+charid = 0
+inputid = 0

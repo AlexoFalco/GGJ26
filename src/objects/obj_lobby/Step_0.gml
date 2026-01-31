@@ -77,8 +77,18 @@ if (countdown_to_start_flag)
 {
     countdown_to_start+=1
     
-    if (countdown_to_start > 60*3)
+    if (countdown_to_start > countdown_to_start_max)
     {
-        game_end()
+        global.__temp.player_list = []
+        for (var i = 0; i < instance_number(obj_lobby_slot); i++) {
+        	var _slot_item = instance_find(obj_lobby_slot, i)
+            array_push(global.__temp.player_list,
+            {
+                playerid: _slot_item.playerid,
+                inputid: _slot_item.inputid,
+                charid: _slot_item.charid
+            })
+        }
+        room_goto(room_arena)
     }
 }

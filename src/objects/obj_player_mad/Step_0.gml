@@ -13,7 +13,7 @@ var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
 var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs(vaxis) > 0);
 
 
-if (pressA && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
+if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
 	p_state = STATE.DASH;
 
 switch p_state

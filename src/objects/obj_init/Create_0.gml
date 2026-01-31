@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editorà
 
-//if (!instance_exists(obj_control))
-//{
-	//instance_create_depth(0, 0, -99999, obj_control);
-//}
+if (!instance_exists(obj_control))
+{
+	instance_create_depth(0, 0, -99999, obj_control);
+}
 
 
 enum RELEASE_MODE_ENUMS

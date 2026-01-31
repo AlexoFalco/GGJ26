@@ -10,8 +10,14 @@ players_list = []
 
 chars_list = [0, 1, 2, 3]
 
+countdown_to_start_max = 60*3
 countdown_to_start_flag = false
 countdown_to_start = noone
+
+if (!release_mode_check(RELEASE_MODE_ENUMS.GIOCO))
+{
+    countdown_to_start_max = 30
+}
 
 if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO))
 {
