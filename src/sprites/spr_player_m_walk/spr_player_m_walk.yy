@@ -3,9 +3,9 @@
   "%Name":"spr_player_m_walk",
   "bboxMode":0,
   "bbox_bottom":242,
-  "bbox_left":15,
-  "bbox_right":239,
-  "bbox_top":4,
+  "bbox_left":26,
+  "bbox_right":240,
+  "bbox_top":30,
   "collisionKind":1,
   "collisionTolerance":0,
   "ConfigValues":{

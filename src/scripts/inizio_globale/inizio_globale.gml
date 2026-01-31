@@ -136,6 +136,7 @@ function scr_inizio_globale(){
 			selimpostazioni = 0;
 			regola_musica = false;
 			regola_sfx = false;
+			regola_durata = false;
 			aiuto_guida = true;
 			_sicuro = false;
 			_opsicuro = 1;

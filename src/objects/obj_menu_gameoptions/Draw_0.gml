@@ -1,10 +1,12 @@
 event_inherited()
 
+var titles = ["New match", "Nuova partita"]
+
 draw_set_colour(c_white)
 draw_set_font(font_title)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
-draw_text(10, 10, "Game options")
+draw_text_border(camera_width_mid, 100, font_button, titles[lang.eng], titles[lang.ita], );
 
 /*
 draw_set_font(font_text)
