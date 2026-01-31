@@ -1,8 +1,8 @@
-if player_id != 0
-{
-	image_index = 0;
-	exit;
-}
+//if player_id != 0
+//{
+//	image_index = 0;
+//	exit;
+//}
 	
 scr_comandi();
 
@@ -10,61 +10,100 @@ scr_comandi();
 var stick_dir = point_direction(0, 0, haxis, vaxis);
 var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
 
-var _move = (upHold || downHold || sxHold || dxHold);
+var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs(vaxis) > 0);
 
 
+if (pressA && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
+	p_state = STATE.DASH;
 
-if (_move)
+switch p_state
 {
-	if (upHold)
-	{
-		if (sxHold)
-			stick_dir = 135;
-		else if (dxHold)
-			stick_dir = 45;
-		else
-			stick_dir = 90;
-	}
-	else if (downHold)
-	{
-		if (sxHold)
-			stick_dir = 225;
-		else if (dxHold)
-			stick_dir = 315;
-		else
-			stick_dir = 270;
-	}
-	else
-	{
-		if (sxHold)
-			stick_dir = 180;
+	case STATE.NORMAL:
+		if (_move)
+		{
+			if (upHold)
+			{
+				if (sxHold)
+					stick_dir = 135;
+				else if (dxHold)
+					stick_dir = 45;
+				else
+					stick_dir = 90;
+			}
+			else if (downHold)
+			{
+				if (sxHold)
+					stick_dir = 225;
+				else if (dxHold)
+					stick_dir = 315;
+				else
+					stick_dir = 270;
+			}
+			else
+			{
+				if (sxHold)
+					stick_dir = 180;
 			
-		if (dxHold)
-			stick_dir = 0;
-	}
-	direction = stick_dir;
-	stick_dist = 1;
-}
-else
-{
-	if (stick_dist == 0)
-	{
-		spd -= accel;
+				if (dxHold)
+					stick_dir = 0;
+			}
+			direction = stick_dir;
+			stick_dist = 1;
+		}
+		else
+		{
+			if (stick_dist == 0)
+				spd -= decel;
+	
+		}
+		spd += accel*stick_dist;
+		spd = clamp(spd, 0, spd_walk);
 		
-	}
+		p_dash_timer++;
+		
+		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+		if (_coll != noone)
+		{
+			_coll.xx += xx;
+			_coll.yy += yy;
+		}
+		
+		var _x = lengthdir_x(spd, direction);
+		var _y = lengthdir_y(spd, direction);
+		xx = lerp(xx, _x, 0.05);
+		yy = lerp(yy, _y, 0.05);
+		break;
+	
+	case STATE.DASH:
+		spd = spd_dash;
+		spd = clamp(spd, 0, spd_dash);
+		
+		p_dash_timer-=5;
+		if (p_dash_timer <= 0)
+		{
+			p_state = STATE.NORMAL;
+			break;
+		}
+		
+		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+		if (_coll != noone)
+		{
+			_coll.p_state = STATE.DASH;
+			_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+			direction = -direction;
+			p_state = STATE.NORMAL;
+			break;
+		}
+		
+		var _x = lengthdir_x(spd, direction);
+		var _y = lengthdir_y(spd, direction);
+		xx = lerp(xx, _x, 0.2);
+		yy = lerp(yy, _y, 0.2);
+		break;
 }
 
 
 
-spd += accel*stick_dist;
-spd = clamp(spd, 0, spd_max);
-
-var _x = lengthdir_x(spd, direction);
-var _y = lengthdir_y(spd, direction);
-xx = lerp(xx, _x, 0.05);
-yy = lerp(yy, _y, 0.05);
-//xx = clamp(xx, -spd_max, spd_max);
-//yy = clamp(yy, -spd_max, spd_max);
 
 
 #region COLLISIONS
@@ -127,8 +166,14 @@ y += yy;
 #endregion
 
 #region ANIMATION
-image_index += 0.05*spd;
+var _anim_spd = clamp(spd, 0, spd/2);
+image_index += 0.05*_anim_spd;
 
 if (spd <= 0)
 	image_index = 0;
 #endregion
+
+
+p_dash_timer = clamp(p_dash_timer, 0, p_dash_timer_max);
+
+depth = -y;
