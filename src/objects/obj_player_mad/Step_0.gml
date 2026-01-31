@@ -75,7 +75,7 @@ if (_masked)
 					spd -= decel;
 	
 			}
-			spd += accel*stick_dist;
+			spd += accel*stick_dist*mud_factor;
 			spd = clamp(spd, 0, spd_walk);
 		
 			p_dash_timer++;
@@ -168,7 +168,7 @@ else
 					spd -= decel;
 	
 			}
-			spd += accel*stick_dist;
+			spd += accel*stick_dist*mud_factor;
 			spd = clamp(spd, 0, spd_walk);
 		
 			p_dash_timer++;

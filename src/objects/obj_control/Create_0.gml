@@ -2,7 +2,7 @@ scr_inizio_globale();
 
 //script specifici per il gioco della GGJ26
 
-timeSessionBase = 1799//17999;
+timeSessionBase = 17999;
 timeSession = timeSessionBase; //il tempo di una partita senza che vengano modificate le impostazioni
 
 startedSession = false
@@ -49,7 +49,7 @@ tempo_prima_scatola = time_source_create
 	time_source_game,540,time_source_units_frames,crea_scatola
 )
 
-if room = room_game //cambia quando mergi il gioco in room != room_title, I guess?
+if room = room_arena //cambia quando mergi il gioco in room != room_title, I guess?
 {
 	time_source_start(tempo_prima_maschera);
 	time_source_start(tempo_prima_scatola);
