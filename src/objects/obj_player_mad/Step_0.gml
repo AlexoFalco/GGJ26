@@ -1,4 +1,6 @@
-
+if player_id != 0
+	exit;
+	
 scr_comandi();
 
 var xx = 0;

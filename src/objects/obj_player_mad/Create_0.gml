@@ -1,4 +1,3 @@
-maxPS = 100;
-PS = maxPS;
-player = 2
-spd = 1;
+p_health_max = 100;
+p_health = p_health_max;
+spd = 5;
