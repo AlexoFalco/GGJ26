@@ -1,6 +1,8 @@
 anim_walk = [spr_player_1_walk, spr_player_2_walk, spr_player_3_walk, spr_player_4_walk];
 anim_guard = [spr_player_1_guard, spr_player_2_guard, spr_player_3_guard, spr_player_4_guard];
-anim_walk_m = spr_player_m_walk
+anim_walk_m = spr_player_m_walk;
+anim_smash = spr_player_m_smash;
+anim_shake = 0;
 sprite_index = anim_walk[0];
 
 arrow_col = [c_green, c_blue, c_red, c_yellow];
@@ -64,9 +66,44 @@ hittable = function()
     p_spinto_count = 45
 }
 
+
+smash_timer = 0;
+smash_time = 30;
+smash_cooldown_timer = 0;
+smash_cooldown_time = 60;
+smash_yplus = 0;
+smash_yplus_max = -64;
 masked_smash = function()
 {
-	
+	for (var i=1; i<9; i++)
+	{
+		var n = 0;
+		n += 45*i;
+		var xx = lengthdir_x(128, n);
+		var yy = lengthdir_y(128, n);
+		instance_create_depth(x+xx, y+yy, -9999, obj_part_cloud,
+		{
+			image_xscale : 3,
+			image_yscale : 3
+		});
+		xx = lengthdir_x(256, n);
+		yy = lengthdir_y(256, n);
+		instance_create_depth(x+xx, y+yy, -9999, obj_part_cloud,
+		{
+			image_xscale : 3,
+			image_yscale : 3,
+			lerp_spd : 0.1
+		});
+	}
+	var _list = ds_list_create();
+	var _coll = collision_circle_list(x, y, 320, obj_player_mad, true, true, _list, false);
+	for (var i=0; i<ds_list_size(_list); i++)
+	{
+		var _curr_inst = _list[| i];
+		_curr_inst.hittable();
+		_curr_inst.p_state = STATE.DASH;
+		_curr_inst.direction = point_direction(x, y, _curr_inst.x, _curr_inst.y);
+	}
 }
 
 

@@ -22,6 +22,7 @@ else {
 	image_alpha = 1
 }
 
+anim_shake = 0;
 if (_masked)
 {
 	if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
@@ -46,6 +47,8 @@ if (_masked)
 	{
 		#region NORMAL
 		case STATE.NORMAL:
+			smash_timer = 0;
+			smash_cooldown_timer = 0;
 			if (_move)
 			{
 				if (upHold)
@@ -138,12 +141,44 @@ if (_masked)
 		#region SMASH
 		case STATE.SMASH:
 			
+			if (smash_timer < smash_time)
+			{
+				smash_timer++;
+				smash_yplus = lerp(smash_yplus, smash_yplus_max, 0.1);
+				if (smash_timer == smash_time)
+				{
+					masked_smash();
+				}
+			}
+			else
+			{
+				spd = 0;
+				smash_yplus = 0;
+				if (smash_cooldown_timer < smash_cooldown_time)
+				{
+					anim_shake = 2;
+					smash_cooldown_timer++;
+				}
+				else
+				{
+					p_state = STATE.NORMAL;
+					smash_timer = 0;
+					smash_cooldown_timer = 0;
+				}
+			}
+			var _x = lengthdir_x(spd, direction);
+			var _y = lengthdir_y(spd, direction);
+			xx = lerp(xx, _x, 0.2);
+			yy = lerp(yy, _y, 0.2);
 			break;
 		#endregion
 	}
 }
 else 
 {
+	if (p_state == STATE.BURST or p_state == STATE.SMASH)
+		p_state = STATE.NORMAL;
+		
 	if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
 	{
 		p_state = STATE.DASH;
@@ -347,6 +382,7 @@ else
 	    image_xscale = sign(_a);
 		image_xscale = image_xscale*2;
 	}
+	image_yscale = image_yscale*2;
 	image_xscale = clamp(image_xscale, -2, 2);
 	image_yscale = clamp(image_yscale, -2, 2);
 	
@@ -356,6 +392,11 @@ else
             sprite_index = anim_walk_m;
             image_speed = lerp(0, 2.2, spd/spd_walk_mask)
             break;
+		
+		case STATE.SMASH:
+			sprite_index = anim_smash;
+			image_index = (smash_timer >= smash_time);
+			break;
     }
 }
 image_index = image_index mod 2;

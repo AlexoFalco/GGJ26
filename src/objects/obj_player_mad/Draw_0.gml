@@ -4,7 +4,7 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
 	var _alpha = sine_wave(current_time / 1000, 3, 4, 0.8);
 	_alpha = clamp(_alpha, 0.7, 1); 
 	draw_sprite_ext(spr_player_arrow, 0, x, y+12, 4, 4, direction, arrow_col[player], _alpha);
-    draw_self();
+    draw_sprite_ext(sprite_index, image_index, x+random_range(-anim_shake, anim_shake), y+smash_yplus+random_range(-anim_shake, anim_shake), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
     draw_set_font(font_title)
     draw_text(x, y-20, p_spinto_count)
     if (p_spinto_count)
@@ -24,7 +24,7 @@ else
 	var _alpha = sine_wave(current_time / 1000, 3, 4, 0.8);
 	_alpha = clamp(_alpha, 0.7, 1);
 	draw_sprite_ext(spr_player_arrow, 0, x, y+12, 4, 4, direction, arrow_col[player], _alpha);
-	draw_self();
+	draw_sprite_ext(sprite_index, image_index, x+random_range(-anim_shake, anim_shake), y+random_range(-anim_shake, anim_shake), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
     if mudded
 		draw_sprite_ext(spr_mud,0,x,y,0.2,0.2,0,c_red,1);
 }
