@@ -1,0 +1,21 @@
+{
+  "$GMRoomUI":"",
+  "%Name":"RoomUI",
+  "children":[
+    {"$GMRUILayer":"v1","%Name":"UILayer_1","alignItems":2,"children":[
+        {"$GMRFlexPanel":"","%Name":"FlexPanel","alignItems":2,"children":[
+            {"$GMRTextItem":"v3","%Name":"text_6D09576B","alignment":0,"charSpacing":0.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"fnt_annuncino","path":"fonts/fnt_annuncino/fnt_annuncino.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_6D09576B","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":4.3,"scaleY":4.3,"text":"Ciao ragazzi, provate pure lo stick del pad\r\nma tenete da conto che potete dashare solo\r\ncon la tastiera premendo il tasto E\r\n(Zig poi domani mi spieghi bene come funziona\r\nil tuo script per i comandi)\r\nEliminate 'sto robo UI e fate tutte le modifiche\r\nche volete","wrap":false,"x":0.0,"y":121.5,},
+          ],"flexDirection":0,"height":{"unit":3,"value":22.0,},"justifyContent":1,"name":"FlexPanel","nodeColour":4294068552,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":3,"value":100.0,},},
+      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"UILayer_1","nodeColour":4282939634,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+  ],
+  "locked":false,
+  "name":"RoomUI",
+  "parent":{
+    "name":"GGJ26",
+    "path":"GGJ26.yyp",
+  },
+  "resourceType":"GMRoomUI",
+  "resourceVersion":"2.0",
+  "viewspaceChildren":[],
+  "visible":true,
+}

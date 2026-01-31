@@ -69,6 +69,7 @@
     {"id":{"name":"room_test_camera","path":"rooms/room_test_camera/room_test_camera.yy",},},
     {"id":{"name":"room_test_lobby","path":"rooms/room_test_lobby/room_test_lobby.yy",},},
     {"id":{"name":"room_test_mad","path":"rooms/room_test_mad/room_test_mad.yy",},},
+    {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
     {"id":{"name":"barra_ps","path":"scripts/barra_ps/barra_ps.yy",},},
     {"id":{"name":"change_variable","path":"scripts/change_variable/change_variable.yy",},},
     {"id":{"name":"clicca","path":"scripts/clicca/clicca.yy",},},
