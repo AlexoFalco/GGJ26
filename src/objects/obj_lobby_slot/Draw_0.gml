@@ -6,5 +6,6 @@ if (is_ready)
 {
     draw_set_font(font_button)
     draw_set_colour(c_red)
-    draw_text(x, y, "Ready")
+    draw_set_halign(fa_center)
+    draw_text(x, y+60, "Ready")
 }
