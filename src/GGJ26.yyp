@@ -146,6 +146,7 @@
     {"id":{"name":"spr_examplechar","path":"sprites/spr_examplechar/spr_examplechar.yy",},},
     {"id":{"name":"spr_font","path":"sprites/spr_font/spr_font.yy",},},
     {"id":{"name":"spr_fp","path":"sprites/spr_fp/spr_fp.yy",},},
+    {"id":{"name":"spr_gui_heart","path":"sprites/spr_gui_heart/spr_gui_heart.yy",},},
     {"id":{"name":"spr_iconine","path":"sprites/spr_iconine/spr_iconine.yy",},},
     {"id":{"name":"spr_lingua","path":"sprites/spr_lingua/spr_lingua.yy",},},
     {"id":{"name":"spr_lobby_slot","path":"sprites/spr_lobby_slot/spr_lobby_slot.yy",},},
