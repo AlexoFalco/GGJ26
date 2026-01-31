@@ -248,42 +248,46 @@ else
 			if (p_dash_timer <= 0)
 			{
 				p_state = STATE.NORMAL;
-				break;
 			}
-		
-		
-			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
-			if (_coll != noone)
+			else
 			{
-				if (_coll.p_state != STATE.GUARD)
+				var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+				if (_coll != noone)
 				{
-                    _coll.hittable()
-					_coll.p_state = STATE.DASH;
-					_coll.direction = point_direction(x, y, _coll.x, _coll.y);
-					direction -= 180;	
-					direction = direction mod 360;
-					p_state = STATE.NORMAL;
-					break;
+					if (_coll.p_state != STATE.GUARD)
+					{
+	                    _coll.hittable();
+						_coll.p_state = STATE.DASH;
+						_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+						direction -= 180;	
+						direction = direction mod 360;
+						p_state = STATE.NORMAL;
+						break;
+					}
+					else
+					{
+						if (p_spinto_count <= 0)
+						{
+							hittable();
+							spd = spd_dash;
+							p_dash_timer = p_dash_timer_max;
+							direction -= 180;	
+							direction = direction mod 360;
+							var _x = lengthdir_x(spd, direction);
+							var _y = lengthdir_y(spd, direction);
+							xx = _x;
+							yy = _y;
+						}
+						break;
+					}
+					//direction = -direction;
 				}
-				else
-				{
-					spd = spd_dash;
-					p_dash_timer = p_dash_timer_max;
-					direction -= 180;	
-					direction = direction mod 360;
-					var _x = lengthdir_x(spd, direction);
-					var _y = lengthdir_y(spd, direction);
-					xx = _x;
-					yy = _y;
-					break;
-				}
-				//direction = -direction;
-			}
 		
-			var _x = lengthdir_x(spd, direction);
-			var _y = lengthdir_y(spd, direction);
-			xx = _x;
-			yy = _y;
+				var _x = lengthdir_x(spd, direction);
+				var _y = lengthdir_y(spd, direction);
+				xx = _x;
+				yy = _y;
+			}
 			break;
 		#endregion
 	
