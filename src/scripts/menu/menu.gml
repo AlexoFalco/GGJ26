@@ -870,16 +870,7 @@ function scr_impostazioni_step()
 			switch selimpostazioni
 			{
 				case IMPOST.FATTO:
-					impostazioni = false;
-				break;
-				case IMPOST.LINGUA:
-				{
-					if global.language = lang.eng
-						global.language = lang.ita;
-					else if global.language = lang.ita
-						global.language = lang.eng;
-					scr_lingua();
-				}
+					room_goto(room_menu_main);
 				break;
 				case IMPOST.MUSICA:
 					regola_musica = true;
@@ -887,28 +878,9 @@ function scr_impostazioni_step()
 				case IMPOST.SFX:
 					regola_sfx = true;
 				break;
-				case IMPOST.AIUTO:
+				case IMPOST.DURATA:
 				{
-					aiuto_guida = !aiuto_guida;	
-					ini_open("ragnicoll.sav");
-					ini_write_real("Impostazioni","aiuti",aiuto_guida);
-					ini_close();
-				}
-				break;
-				/*case IMPOST.COMANDI:
-				{
-					/*_controllimouse = !_controllimouse;
-					ini_open("ragnicoll.sav");
-					ini_write_real("Impostazioni","controlli",_controllimouse);
-					ini_close();
-				}
-				break;*/
-				case IMPOST.FULLSCREEN:
-				{
-					if window_get_fullscreen()
-						window_set_fullscreen(false);
-					else
-						window_set_fullscreen(true);
+					regola_durata = true;
 				}
 				break;
 			}

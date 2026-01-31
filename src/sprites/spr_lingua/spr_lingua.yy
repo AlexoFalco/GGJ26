@@ -24,7 +24,7 @@
   ],
   "name":"spr_lingua",
   "nineSlice":null,
-  "origin":1,
+  "origin":4,
   "parent":{
     "name":"sprite",
     "path":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi)/sprite.yy",
@@ -80,7 +80,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":75,
-    "yorigin":0,
+    "yorigin":45,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
