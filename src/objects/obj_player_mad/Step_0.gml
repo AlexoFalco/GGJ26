@@ -31,11 +31,13 @@ if (tempo_trasformazione > 0)
     tempo_trasformazione -= 1
     spd_walk = spd_walk_mask
     accel = accel_mask
+    spd_walk_lerp = spd_walk_lerp_mask
 }
 else 
 {
 	spd_walk = spd_walk_normal
     accel = accel_normal
+    spd_walk_lerp = spd_walk_lerp_normal
 }
 
 switch p_state
@@ -94,8 +96,8 @@ switch p_state
 		
 		var _x = lengthdir_x(spd, direction);
 		var _y = lengthdir_y(spd, direction);
-		xx = lerp(xx, _x, 0.05);
-		yy = lerp(yy, _y, 0.05);
+		xx = lerp(xx, _x, spd_walk_lerp);
+		yy = lerp(yy, _y, spd_walk_lerp);
 		break;
 	#endregion
 	
@@ -194,11 +196,11 @@ switch p_state
 
 #region ANIMATIONS
 
-//var _anim_spd = clamp(spd, 0, spd/2);
-//image_index += 0.05*_anim_spd;
-//
-//if (spd <= 0)
-	//image_index = 0;
+var _a = dcos(direction)
+if (_a != 0)
+{
+    image_xscale = sign(_a)
+}
 
 if (tempo_trasformazione == 0)
 {
@@ -289,27 +291,6 @@ x += xx;
 y += yy;
 	
 #endregion
-
-/*
-#region ANIMATION
-var _anim_spd = clamp(spd, 0, spd/2);
-image_index += 0.05*_anim_spd;
-
-if (spd <= 0)
-	image_index = 0;
-
-switch (p_state)
-{
-	case STATE.GUARD:
-	case STATE.TEST_GUARD:
-		sprite_index = anim_guard[player];
-		break;
-	case STATE.NORMAL:
-		sprite_index = anim_walk[player];
-		break;
-}
-#endregion
-*/
 
 
 p_dash_timer = clamp(p_dash_timer, 0, p_dash_timer_max);
