@@ -14,8 +14,11 @@ var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs
 
 
 if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
+{
 	p_state = STATE.DASH;
-	
+	spd = spd_dash;
+}
+
 if (backPress && p_state == STATE.NORMAL && p_guard_timer == p_guard_timer_max)
 {
 	if (spd != 0)
@@ -96,6 +99,7 @@ switch p_state
 			break;
 		}
 		
+		
 		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
 		if (_coll != noone)
 		{
@@ -103,23 +107,36 @@ switch p_state
 			{
 				_coll.p_state = STATE.DASH;
 				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+				direction -= 180;	
+				direction = direction mod 360;
+				p_state = STATE.NORMAL;
+				break;
 			}
-			direction = -direction;
-			p_state = STATE.NORMAL;
-			break;
+			else
+			{
+				spd = spd_dash;
+				p_dash_timer = p_dash_timer_max;
+				direction -= 180;	
+				direction = direction mod 360;
+				var _x = lengthdir_x(spd, direction);
+				var _y = lengthdir_y(spd, direction);
+				xx = _x;
+				yy = _y;
+			}
+			//direction = -direction;
 		}
 		
 		var _x = lengthdir_x(spd, direction);
 		var _y = lengthdir_y(spd, direction);
-		xx = lerp(xx, _x, 0.2);
-		yy = lerp(yy, _y, 0.2);
+		xx = _x;
+		yy = _y;
 		break;
 	#endregion
 	
 	#region GUARD
 	case STATE.GUARD:
 		
-		p_guard_timer -= p_dash_timer_spd;
+		p_guard_timer -= 1;
 		if (p_guard_timer <= 0)
 		{
 			p_state = STATE.NORMAL;
@@ -143,13 +160,17 @@ switch p_state
 	
 	case STATE.TEST_GUARD:
 		
-		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
-		if (_coll != noone)
-		{
-			_coll.p_state = STATE.DASH;
-			_coll.direction = point_direction(x, y, _coll.x, _coll.y);
-			direction = -direction;
-		}
+		//var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+		//if (_coll != noone)
+		//{
+		//	if (_coll.p_state == STATE.DASH)
+		//	{
+		//		_coll.p_dash_timer = _coll.p_dash_timer_max;
+		//		_coll.spd = -_coll.spd_dash;
+				
+		//		direction = -direction;
+		//	}
+		//}
 		
 		var _x = lengthdir_x(spd, direction);
 		var _y = lengthdir_y(spd, direction);
