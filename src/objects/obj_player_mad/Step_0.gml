@@ -6,12 +6,12 @@ if player_id != 0
 	
 scr_comandi();
 
-var xx = 0;
-var yy = 0;
+
 var stick_dir = point_direction(0, 0, haxis, vaxis);
 var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
 
 var _move = (upHold || downHold || sxHold || dxHold);
+
 
 
 if (_move)
@@ -42,16 +42,29 @@ if (_move)
 		if (dxHold)
 			stick_dir = 0;
 	}
+	direction = stick_dir;
 	stick_dist = 1;
 }
+else
+{
+	if (stick_dist == 0)
+	{
+		spd -= accel;
+		
+	}
+}
+
+
 
 spd += accel*stick_dist;
 spd = clamp(spd, 0, spd_max);
 
-
-xx += spd * stick_dist * dcos(stick_dir);
-yy -= spd * stick_dist * dsin(stick_dir);
-
+var _x = lengthdir_x(spd, direction);
+var _y = lengthdir_y(spd, direction);
+xx = lerp(xx, _x, 0.05);
+yy = lerp(yy, _y, 0.05);
+//xx = clamp(xx, -spd_max, spd_max);
+//yy = clamp(yy, -spd_max, spd_max);
 
 
 #region COLLISIONS
@@ -114,7 +127,7 @@ y += yy;
 #endregion
 
 #region ANIMATION
-image_index += 0.01*spd;
+image_index += 0.05*spd;
 
 if (spd <= 0)
 	image_index = 0;
