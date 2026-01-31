@@ -42,7 +42,7 @@ part_ind = false;
 part_cloud = function()
 {
 	part_ind = true;
-	instance_create_depth(x+random_range(-40, 40), y+12, depth+1, obj_part_cloud);
+	instance_create_depth(x-40*image_xscale, y+32, depth-1, obj_part_cloud);
 }
 
 
