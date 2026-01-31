@@ -12,6 +12,7 @@ sfarfallo = function(){
 
 sparizione = function(){
 	instance_destroy();
+	time_source_start(obj_control.tempo_nuova_maschera)
 }
 
 vulnerabilitas = function(){
