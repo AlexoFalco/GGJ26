@@ -267,10 +267,10 @@ if (!_masked)
     {
         case STATE.GUARD:
     	case STATE.TEST_GUARD:
-    		sprite_index = anim_guard[player];
+    		sprite_index = anim_guard[charid];
     		break;
     	case STATE.NORMAL:
-    		sprite_index = anim_walk[player];
+    		sprite_index = anim_walk[charid];
             image_speed = lerp(0, 2, spd/spd_walk_normal) 
             break;
     }
