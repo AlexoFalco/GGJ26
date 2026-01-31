@@ -1,14 +1,14 @@
-enum STATE
+anim_walk = [spr_player_1_walk, spr_player_2_walk, spr_player_3_walk, spr_player_4_walk];
+switch player
 {
-	WAIT,
-	NORMAL,
-	DASH,
+	case 0:
+		sprite_index = 
+		break;
 }
 
 //Status vars
-p_health_max = 100;
+p_health_max = 3;
 p_health = p_health_max;
-p_state = STATE.NORMAL;
 p_dash_timer_max = 100;
 p_dash_timer = p_dash_timer_max;
 
