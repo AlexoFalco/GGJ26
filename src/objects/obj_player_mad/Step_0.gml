@@ -13,6 +13,14 @@ var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
 var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs(vaxis) > 0);
 var _masked = (tempo_trasformazione > 0);
 
+if (p_godmode > 0)
+{
+    p_godmode -= 1
+    image_alpha = (floor(p_godmode/6) mod 2)
+}
+else {
+	image_alpha = 1
+}
 
 if (_masked)
 {
@@ -249,6 +257,7 @@ else
 			{
 				if (_coll.p_state != STATE.GUARD)
 				{
+                    _coll.p_spinto_count = 30
 					_coll.p_state = STATE.DASH;
 					_coll.direction = point_direction(x, y, _coll.x, _coll.y);
 					direction -= 180;	
@@ -315,6 +324,10 @@ var _a = dcos(direction)
 
 if (!_masked)
 {
+    if (spd < 0.01)
+    {
+        image_index = 0
+    }
 	if (_a != 0)
 	{
 	    image_xscale = sign(_a);
@@ -335,6 +348,10 @@ if (!_masked)
 }
 else 
 {
+    if (spd < 0.01)
+    {
+        image_index = 0
+    }
 	if (_a != 0)
 	{
 	    image_xscale = sign(_a)*2;
@@ -369,7 +386,21 @@ else
 
 #region COLLISIONS
 
+if (place_meeting(x+sign(xx), y+sign(yy), obj_collider))
+{
+    if (p_spinto_count > 0)
+    {
+        hit()
+        p_spinto_count = 0
+    }
+}
+
 var _collisions = CheckSolid();
+
+if (p_spinto_count > 0)
+{
+    p_spinto_count -= 1
+}
 
 if (collision_with_any(x + xx, y, _collisions)) {
     var safety = 0;

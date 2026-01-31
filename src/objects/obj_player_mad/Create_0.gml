@@ -12,6 +12,9 @@ p_dash_timer_spd = 5;
 p_guard_timer_max = 20;
 p_guard_timer = p_guard_timer_max;
 
+p_spinto_count = 0
+p_godmode = 0
+
 //Movement vars
 spd = 0;
 spd_walk = 10;
@@ -43,6 +46,14 @@ part_cloud = function()
 {
 	part_ind = true;
 	instance_create_depth(x-40*image_xscale, y+32, depth-1, obj_part_cloud);
+}
+
+hit = function(_godmode_count = 30)
+{
+    if (p_godmode > 0) return;
+    
+    p_health -= 1
+    p_godmode = _godmode_count
 }
 
 

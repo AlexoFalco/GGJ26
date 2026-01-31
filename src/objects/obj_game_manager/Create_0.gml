@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO))
+if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO, RELEASE_MODE_ENUMS.ALEXO))
 {
     var _length = array_length(global.__temp.player_list)
     for (var i = 0; i < _length; i++) {
