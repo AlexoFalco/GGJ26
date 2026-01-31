@@ -1,7 +1,8 @@
-scr_comandi();
 
 scr_comandi();
 
+var xx = 0;
+var yy = 0;
 var stick_dir = point_direction(0, 0, haxis, vaxis);
 var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
 	
@@ -37,8 +38,8 @@ if (upHold || downHold || sxHold || dxHold)
 }
 
 
-xx -= spd * stick_dist * dcos(stick_dir);
-yy += spd * stick_dist * dsin(stick_dir);
+xx += spd * stick_dist * dcos(stick_dir);
+yy -= spd * stick_dist * dsin(stick_dir);
 
 
 

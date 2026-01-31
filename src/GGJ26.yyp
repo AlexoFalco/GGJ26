@@ -103,6 +103,7 @@
     {"id":{"name":"spr_lingua","path":"sprites/spr_lingua/spr_lingua.yy",},},
     {"id":{"name":"spr_mask","path":"sprites/spr_mask/spr_mask.yy",},},
     {"id":{"name":"spr_namebox","path":"sprites/spr_namebox/spr_namebox.yy",},},
+    {"id":{"name":"spr_player_walk_1","path":"sprites/spr_player_walk_1/spr_player_walk_1.yy",},},
     {"id":{"name":"spr_portrait_examplechar_idle","path":"sprites/spr_portrait_examplechar_idle/spr_portrait_examplechar_idle.yy",},},
     {"id":{"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},},
     {"id":{"name":"spr_portrait_examplechar","path":"sprites/spr_portrait_examplechar/spr_portrait_examplechar.yy",},},
