@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+input_list = global.input_list
+
 for (var i = 0; i < 32; i++) 
 {
 	if (gamepad_button_check_pressed(i, gp_face1))
@@ -25,6 +27,7 @@ for (var i = 0; i < 32; i++)
                 if (_obj.playerid == _playerid)
                 {
                     _obj.inputid = _inputid 
+                    _obj.update_char_without_conflict(1)
                 }
             }
         }
