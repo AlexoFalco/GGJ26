@@ -4,7 +4,9 @@ event_inherited()
 
 players_count = 4
 for (var i = 2; i <= players_count; i++) {
-    var _text = $"{i} players";
+    var _it = $"{i} giocatori";
+    var _en = $"{i} players";
+    var _text = [_en, _it ]
     var _onclick = method({_count : i},function()
     {
         global.__temp.players_count = _count; 
