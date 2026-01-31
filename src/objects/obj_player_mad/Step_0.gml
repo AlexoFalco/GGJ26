@@ -16,6 +16,18 @@ var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs
 if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
 	p_state = STATE.DASH;
 
+if (tempo_trasformazione > 0)
+{
+    tempo_trasformazione -= 1
+    spd_walk = spd_walk_mask
+    accel = accel_mask
+}
+else 
+{
+	spd_walk = spd_walk_normal
+    accel = accel_normal
+}
+
 switch p_state
 {
 	case STATE.NORMAL:
@@ -102,6 +114,37 @@ switch p_state
 		break;
 }
 
+#region ANIMATIONS
+
+//var _anim_spd = clamp(spd, 0, spd/2);
+//image_index += 0.05*_anim_spd;
+//
+//if (spd <= 0)
+	//image_index = 0;
+
+if (tempo_trasformazione == 0)
+{
+    switch(p_state)
+    {
+        case STATE.NORMAL:
+            sprite_index = anim_walk[charid];
+            image_speed = lerp(0, 2, spd/spd_walk_normal)
+            break;
+    }
+}
+else 
+{
+    switch(p_state)
+    {
+        case STATE.NORMAL:
+            sprite_index = anim_walk_m;
+            image_speed = lerp(0, 2.2, spd/spd_walk_mask)
+            break;
+    }
+}
+
+#endregion
+
 
 
 
@@ -163,14 +206,6 @@ if (collision_with_any(x, y, _collisions)) {
 x += xx;
 y += yy;
 	
-#endregion
-
-#region ANIMATION
-var _anim_spd = clamp(spd, 0, spd/2);
-image_index += 0.05*_anim_spd;
-
-if (spd <= 0)
-	image_index = 0;
 #endregion
 
 

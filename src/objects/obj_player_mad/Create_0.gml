@@ -1,5 +1,7 @@
 anim_walk = [spr_player_1_walk, spr_player_2_walk, spr_player_3_walk, spr_player_4_walk];
-sprite_index = anim_walk[player];
+anim_guard = [spr_player_1_guard, spr_player_2_guard, spr_player_3_guard, spr_player_4_guard];
+anim_walk_m = spr_player_m_walk
+sprite_index = anim_walk[0];
 
 //Status vars
 p_health_max = 3;
@@ -11,10 +13,13 @@ p_dash_timer = p_dash_timer_max;
 
 //Movement vars
 spd = 0;
-spd_max = 7;
 spd_walk = 10;
+spd_walk_normal = 10;
+spd_walk_mask = 20;
 spd_dash = 20;
 accel = 0.25;
+accel_normal = 0.25;
+accel_mask = 0.50;
 decel = 1;
 xx = 0;
 yy = 0;
@@ -25,3 +30,5 @@ image_speed = 0;
 
 charid = 0
 inputid = 0
+
+tempo_trasformazione = 0

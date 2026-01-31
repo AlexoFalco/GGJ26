@@ -12,13 +12,11 @@ with other		//se sposti in obj_player, cancella
 			case masks.paladino: case masks.megaman: tempo_trasformazione = 120; break;
 			default: tempo_trasformazione = 10;
 		}
-		show_message(other.id_mask);
 		transformation = other.id_mask;
 		tempo_detrasformazione = time_source_create
 		(
 			time_source_game,tempo_trasformazione,time_source_units_frames,
 			function(){
-				show_message(transformation);
 				transformation = 0;
 			}
 		)

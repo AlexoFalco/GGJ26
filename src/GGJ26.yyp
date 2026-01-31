@@ -16,9 +16,9 @@
   },
   "defaultScriptType":1,
   "Folders":[
+    {"$GMFolder":"","%Name":"Alexo","folderPath":"folders/Alexo.yy","name":"Alexo","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Game","folderPath":"folders/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Alexo","folderPath":"folders/Alexo.yy","name":"Alexo","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Libs","folderPath":"folders/Libs.yy","name":"Libs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Pacchetto_Zig","folderPath":"folders/Libs/Pacchetto_Zig.yy","name":"Pacchetto_Zig","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Roba generica (o quasi)","folderPath":"folders/Libs/Pacchetto_Zig/Roba generica (o quasi).yy","name":"Roba generica (o quasi)","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -146,6 +146,7 @@
     {"id":{"name":"spr_player_3_walk","path":"sprites/spr_player_3_walk/spr_player_3_walk.yy",},},
     {"id":{"name":"spr_player_4_guard","path":"sprites/spr_player_4_guard/spr_player_4_guard.yy",},},
     {"id":{"name":"spr_player_4_walk","path":"sprites/spr_player_4_walk/spr_player_4_walk.yy",},},
+    {"id":{"name":"spr_player_m_walk","path":"sprites/spr_player_m_walk/spr_player_m_walk.yy",},},
     {"id":{"name":"spr_portrait_examplechar_idle","path":"sprites/spr_portrait_examplechar_idle/spr_portrait_examplechar_idle.yy",},},
     {"id":{"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},},
     {"id":{"name":"spr_portrait_examplechar","path":"sprites/spr_portrait_examplechar/spr_portrait_examplechar.yy",},},
