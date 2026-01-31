@@ -9,6 +9,10 @@ enum STATE
 	SMASH
 }
 
+function sine_wave(time, period, amplitude, midpoint) {
+    return sin(time * 2 * pi / period) * amplitude + midpoint;
+}
+
 function collision_with_any(_x, _y, _array) {
     for (var i = 0; i < array_length(_array); ++i) {
         var inst = _array[i];
