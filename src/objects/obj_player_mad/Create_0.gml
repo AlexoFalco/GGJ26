@@ -95,6 +95,15 @@ masked_smash = function()
 			lerp_spd : 0.1
 		});
 	}
+	var _list = ds_list_create();
+	var _coll = collision_circle_list(x, y, 320, obj_player_mad, true, true, _list, false);
+	for (var i=0; i<ds_list_size(_list); i++)
+	{
+		var _curr_inst = _list[| i];
+		_curr_inst.hittable();
+		_curr_inst.p_state = STATE.DASH;
+		_curr_inst.direction = point_direction(x, y, _curr_inst.x, _curr_inst.y);
+	}
 }
 
 
