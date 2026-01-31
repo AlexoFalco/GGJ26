@@ -122,26 +122,10 @@ if (_masked)
 			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
 			if (_coll != noone)
 			{
-				if (_coll.p_state != STATE.GUARD)
-				{
-					_coll.p_state = STATE.DASH;
-					_coll.direction = point_direction(x, y, _coll.x, _coll.y);
-					direction -= 180;	
-					direction = direction mod 360;
-				}
-				else
-				{
-					spd = spd_dash;
-					p_dash_timer = p_dash_timer_max;
-					direction -= 180;	
-					direction = direction mod 360;
-					var _x = lengthdir_x(spd, direction);
-					var _y = lengthdir_y(spd, direction);
-					xx = _x;
-					yy = _y;
-					break;
-				}
-				//direction = -direction;
+				_coll.p_state = STATE.DASH;
+				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+				direction -= 180;	
+				direction = direction mod 360;
 			}
 		
 			var _x = lengthdir_x(spd, direction);
@@ -355,11 +339,12 @@ else
 {
     if (spd < 0.01)
     {
-        image_index = 0
+        image_index = 0;
     }
 	if (_a != 0)
 	{
-	    image_xscale = sign(_a)*2;
+	    image_xscale = sign(_a);
+		image_xscale = image_xscale*2;
 	}
 	image_xscale = clamp(image_xscale, -2, 2);
 	image_yscale = clamp(image_yscale, -2, 2);
