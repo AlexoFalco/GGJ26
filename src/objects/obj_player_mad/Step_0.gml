@@ -26,173 +26,230 @@ if (backPress && p_state == STATE.NORMAL && p_guard_timer == p_guard_timer_max)
 	p_state = STATE.GUARD;
 }
 
-if (tempo_trasformazione > 0)
+var _masked = tempo_trasformazione > 0
+if (_masked)
 {
-    tempo_trasformazione -= 1
-    spd_walk = spd_walk_mask
-    accel = accel_mask
-    spd_walk_lerp = spd_walk_lerp_mask
+    tempo_trasformazione--;
+    spd_walk = spd_walk_mask;
+    accel = accel_mask;
+    spd_walk_lerp = spd_walk_lerp_mask;
+	
+	switch p_state
+	{
+		#region NORMAL
+		case STATE.NORMAL:
+			if (_move)
+			{
+				if (upHold)
+				{
+					if (sxHold)
+						stick_dir = 135;
+					else if (dxHold)
+						stick_dir = 45;
+					else
+						stick_dir = 90;
+				}
+				else if (downHold)
+				{
+					if (sxHold)
+						stick_dir = 225;
+					else if (dxHold)
+						stick_dir = 315;
+					else
+						stick_dir = 270;
+				}
+				else
+				{
+					if (sxHold)
+						stick_dir = 180;
+			
+					if (dxHold)
+						stick_dir = 0;
+				}
+				direction = stick_dir;
+				stick_dist = 1;
+			}
+			else
+			{
+				if (stick_dist == 0)
+					spd -= decel;
+	
+			}
+			spd += accel*stick_dist;
+			spd = clamp(spd, 0, spd_walk);
+		
+			p_dash_timer++;
+			p_guard_timer++;
+		
+			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+			if (_coll != noone)
+			{
+				if (_coll.p_state = STATE.NORMAL)
+				{
+					_coll.xx += xx;
+					_coll.yy += yy;
+				}
+			}
+		
+			var _x = lengthdir_x(spd, direction);
+			var _y = lengthdir_y(spd, direction);
+			xx = lerp(xx, _x, spd_walk_lerp);
+			yy = lerp(yy, _y, spd_walk_lerp);
+			break;
+		#endregion
+	
+		#region DASH
+		case STATE.DASH:
+			break;
+		#endregion
+	}
 }
 else 
 {
-	spd_walk = spd_walk_normal
-    accel = accel_normal
-    spd_walk_lerp = spd_walk_lerp_normal
-}
-
-switch p_state
-{
-	#region NORMAL
-	case STATE.NORMAL:
-		if (_move)
-		{
-			if (upHold)
+	spd_walk = spd_walk_normal;
+    accel = accel_normal;
+    spd_walk_lerp = spd_walk_lerp_normal;
+	
+	switch p_state
+	{
+		#region NORMAL
+		case STATE.NORMAL:
+			if (_move)
 			{
-				if (sxHold)
-					stick_dir = 135;
-				else if (dxHold)
-					stick_dir = 45;
+				if (upHold)
+				{
+					if (sxHold)
+						stick_dir = 135;
+					else if (dxHold)
+						stick_dir = 45;
+					else
+						stick_dir = 90;
+				}
+				else if (downHold)
+				{
+					if (sxHold)
+						stick_dir = 225;
+					else if (dxHold)
+						stick_dir = 315;
+					else
+						stick_dir = 270;
+				}
 				else
-					stick_dir = 90;
-			}
-			else if (downHold)
-			{
-				if (sxHold)
-					stick_dir = 225;
-				else if (dxHold)
-					stick_dir = 315;
-				else
-					stick_dir = 270;
+				{
+					if (sxHold)
+						stick_dir = 180;
+			
+					if (dxHold)
+						stick_dir = 0;
+				}
+				direction = stick_dir;
+				stick_dist = 1;
 			}
 			else
 			{
-				if (sxHold)
-					stick_dir = 180;
-			
-				if (dxHold)
-					stick_dir = 0;
+				if (stick_dist == 0)
+					spd -= decel;
+	
 			}
-			direction = stick_dir;
-			stick_dist = 1;
-		}
-		else
-		{
-			if (stick_dist == 0)
-				spd -= decel;
-	
-		}
-		spd += accel*stick_dist;
-		spd = clamp(spd, 0, spd_walk);
+			spd += accel*stick_dist;
+			spd = clamp(spd, 0, spd_walk);
 		
-		p_dash_timer++;
-		p_guard_timer++;
+			p_dash_timer++;
+			p_guard_timer++;
 		
-		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
-		if (_coll != noone)
-		{
-			_coll.xx += xx;
-			_coll.yy += yy;
-		}
-		
-		var _x = lengthdir_x(spd, direction);
-		var _y = lengthdir_y(spd, direction);
-		xx = lerp(xx, _x, spd_walk_lerp);
-		yy = lerp(yy, _y, spd_walk_lerp);
-		break;
-	#endregion
-	
-	#region DASH
-	case STATE.DASH:
-		spd = spd_dash;
-		spd = clamp(spd, 0, spd_dash);
-		
-		p_dash_timer -= p_dash_timer_spd;
-		if (p_dash_timer <= 0)
-		{
-			p_state = STATE.NORMAL;
-			break;
-		}
-		
-		
-		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
-		if (_coll != noone)
-		{
-			if (_coll.p_state != STATE.GUARD)
+			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+			if (_coll != noone)
 			{
-				_coll.p_state = STATE.DASH;
-				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
-				direction -= 180;	
-				direction = direction mod 360;
+				if (_coll.p_state = STATE.NORMAL)
+				{
+					_coll.xx += xx;
+					_coll.yy += yy;
+				}
+			}
+		
+			var _x = lengthdir_x(spd, direction);
+			var _y = lengthdir_y(spd, direction);
+			xx = lerp(xx, _x, spd_walk_lerp);
+			yy = lerp(yy, _y, spd_walk_lerp);
+			break;
+		#endregion
+	
+		#region DASH
+		case STATE.DASH:
+			spd = spd_dash;
+			spd = clamp(spd, 0, spd_dash);
+		
+			p_dash_timer -= p_dash_timer_spd;
+			if (p_dash_timer <= 0)
+			{
 				p_state = STATE.NORMAL;
 				break;
 			}
-			else
+		
+		
+			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+			if (_coll != noone)
 			{
-				spd = spd_dash;
-				p_dash_timer = p_dash_timer_max;
-				direction -= 180;	
-				direction = direction mod 360;
-				var _x = lengthdir_x(spd, direction);
-				var _y = lengthdir_y(spd, direction);
-				xx = _x;
-				yy = _y;
+				if (_coll.p_state != STATE.GUARD)
+				{
+					_coll.p_state = STATE.DASH;
+					_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+					direction -= 180;	
+					direction = direction mod 360;
+					p_state = STATE.NORMAL;
+					break;
+				}
+				else
+				{
+					spd = spd_dash;
+					p_dash_timer = p_dash_timer_max;
+					direction -= 180;	
+					direction = direction mod 360;
+					var _x = lengthdir_x(spd, direction);
+					var _y = lengthdir_y(spd, direction);
+					xx = _x;
+					yy = _y;
+					break;
+				}
+				//direction = -direction;
 			}
-			//direction = -direction;
-		}
 		
-		var _x = lengthdir_x(spd, direction);
-		var _y = lengthdir_y(spd, direction);
-		xx = _x;
-		yy = _y;
-		break;
-	#endregion
-	
-	#region GUARD
-	case STATE.GUARD:
-		
-		p_guard_timer -= 1;
-		if (p_guard_timer <= 0)
-		{
-			p_state = STATE.NORMAL;
+			var _x = lengthdir_x(spd, direction);
+			var _y = lengthdir_y(spd, direction);
+			xx = _x;
+			yy = _y;
 			break;
-		}
-		
-		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
-		if (_coll != noone)
-		{
-			_coll.p_state = STATE.DASH;
-			_coll.direction = point_direction(x, y, _coll.x, _coll.y);
-			direction = -direction;
-			p_state = STATE.NORMAL;
-		}
-		
-		var _x = lengthdir_x(spd, direction);
-		var _y = lengthdir_y(spd, direction);
-		xx = lerp(xx, _x, 0.2);
-		yy = lerp(yy, _y, 0.2);
-		break;
+		#endregion
 	
-	case STATE.TEST_GUARD:
+		#region GUARD
+		case STATE.GUARD:
 		
-		//var _coll = instance_place(x+xx, y+yy, obj_player_mad);
-		//if (_coll != noone)
-		//{
-		//	if (_coll.p_state == STATE.DASH)
-		//	{
-		//		_coll.p_dash_timer = _coll.p_dash_timer_max;
-		//		_coll.spd = -_coll.spd_dash;
-				
-		//		direction = -direction;
-		//	}
-		//}
+			p_guard_timer -= 1;
+			if (p_guard_timer <= 0)
+			{
+				p_state = STATE.NORMAL;
+				break;
+			}
 		
-		var _x = lengthdir_x(spd, direction);
-		var _y = lengthdir_y(spd, direction);
-		xx = lerp(xx, _x, 0.2);
-		yy = lerp(yy, _y, 0.2);
-		break;
-	#endregion
+			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+			if (_coll != noone)
+			{
+				_coll.p_state = STATE.DASH;
+				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+				direction = -direction;
+				p_state = STATE.NORMAL;
+			}
+		
+			var _x = lengthdir_x(spd, direction);
+			var _y = lengthdir_y(spd, direction);
+			xx = lerp(xx, _x, 0.2);
+			yy = lerp(yy, _y, 0.2);
+			break;
+		#endregion
+	}
 }
+
+
 
 #region ANIMATIONS
 
@@ -202,8 +259,10 @@ if (_a != 0)
     image_xscale = sign(_a)
 }
 
-if (tempo_trasformazione == 0)
+if (!_masked)
 {
+	image_xscale = 1;
+	image_yscale = 1;
     switch(p_state)
     {
         case STATE.GUARD:
@@ -218,6 +277,8 @@ if (tempo_trasformazione == 0)
 }
 else 
 {
+	image_xscale = 1.5;
+	image_yscale = 1.5;
     switch(p_state)
     {
         case STATE.NORMAL:
