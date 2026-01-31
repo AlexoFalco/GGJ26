@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_mad",
   "parent":{
-    "name":"GGJ26",
-    "path":"GGJ26.yyp",
+    "name":"mad",
+    "path":"folders/mad.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

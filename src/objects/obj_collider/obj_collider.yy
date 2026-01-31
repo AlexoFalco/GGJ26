@@ -6,8 +6,8 @@
   "name":"obj_collider",
   "overriddenProperties":[],
   "parent":{
-    "name":"GGJ26",
-    "path":"GGJ26.yyp",
+    "name":"mad",
+    "path":"folders/mad.yy",
   },
   "parentObjectId":null,
   "persistent":false,

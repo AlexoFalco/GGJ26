@@ -1,5 +1,8 @@
 if player_id != 0
+{
+	image_index = 0;
 	exit;
+}
 	
 scr_comandi();
 
@@ -7,8 +10,11 @@ var xx = 0;
 var yy = 0;
 var stick_dir = point_direction(0, 0, haxis, vaxis);
 var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
-	
-if (upHold || downHold || sxHold || dxHold)
+
+var _move = (upHold || downHold || sxHold || dxHold);
+
+
+if (_move)
 {
 	if (upHold)
 	{
@@ -38,6 +44,9 @@ if (upHold || downHold || sxHold || dxHold)
 	}
 	stick_dist = 1;
 }
+
+spd += accel*stick_dist;
+spd = clamp(spd, 0, spd_max);
 
 
 xx += spd * stick_dist * dcos(stick_dir);
@@ -102,4 +111,11 @@ if (collision_with_any(x, y, _collisions)) {
 x += xx;
 y += yy;
 	
+#endregion
+
+#region ANIMATION
+image_index += 0.01*spd;
+
+if (spd <= 0)
+	image_index = 0;
 #endregion
