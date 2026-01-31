@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"GGJ26",
-    "path":"GGJ26.yyp",
+    "name":"zig",
+    "path":"folders/zig.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

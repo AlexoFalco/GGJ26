@@ -8,8 +8,9 @@ p_health_max = 3;
 p_health = p_health_max;
 p_dash_timer_max = 100;
 p_dash_timer = p_dash_timer_max;
-p_guard_timer_max = 100;
-p_dash_timer = p_dash_timer_max;
+p_dash_timer_spd = 5;
+p_guard_timer_max = 50;
+p_guard_timer = p_guard_timer_max;
 
 //Movement vars
 spd = 0;
@@ -23,6 +24,7 @@ accel_mask = 0.50;
 decel = 1;
 xx = 0;
 yy = 0;
+lerp_spd = 0.2;
 
 
 //Anim vars

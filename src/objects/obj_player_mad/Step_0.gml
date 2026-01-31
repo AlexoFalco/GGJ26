@@ -14,7 +14,17 @@ var _move = (upHold || downHold || sxHold || dxHold) or (abs(haxis) > 0) or (abs
 
 
 if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
+{
 	p_state = STATE.DASH;
+	spd = spd_dash;
+}
+
+if (backPress && p_state == STATE.NORMAL && p_guard_timer == p_guard_timer_max)
+{
+	if (spd != 0)
+		spd = spd/2;
+	p_state = STATE.GUARD;
+}
 
 if (tempo_trasformazione > 0)
 {
@@ -30,6 +40,7 @@ else
 
 switch p_state
 {
+	#region NORMAL
 	case STATE.NORMAL:
 		if (_move)
 		{
@@ -72,6 +83,7 @@ switch p_state
 		spd = clamp(spd, 0, spd_walk);
 		
 		p_dash_timer++;
+		p_guard_timer++;
 		
 		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
 		if (_coll != noone)
@@ -85,13 +97,59 @@ switch p_state
 		xx = lerp(xx, _x, 0.05);
 		yy = lerp(yy, _y, 0.05);
 		break;
+	#endregion
 	
+	#region DASH
 	case STATE.DASH:
 		spd = spd_dash;
 		spd = clamp(spd, 0, spd_dash);
 		
-		p_dash_timer-=5;
+		p_dash_timer -= p_dash_timer_spd;
 		if (p_dash_timer <= 0)
+		{
+			p_state = STATE.NORMAL;
+			break;
+		}
+		
+		
+		var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+		if (_coll != noone)
+		{
+			if (_coll.p_state != STATE.GUARD)
+			{
+				_coll.p_state = STATE.DASH;
+				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
+				direction -= 180;	
+				direction = direction mod 360;
+				p_state = STATE.NORMAL;
+				break;
+			}
+			else
+			{
+				spd = spd_dash;
+				p_dash_timer = p_dash_timer_max;
+				direction -= 180;	
+				direction = direction mod 360;
+				var _x = lengthdir_x(spd, direction);
+				var _y = lengthdir_y(spd, direction);
+				xx = _x;
+				yy = _y;
+			}
+			//direction = -direction;
+		}
+		
+		var _x = lengthdir_x(spd, direction);
+		var _y = lengthdir_y(spd, direction);
+		xx = _x;
+		yy = _y;
+		break;
+	#endregion
+	
+	#region GUARD
+	case STATE.GUARD:
+		
+		p_guard_timer -= 1;
+		if (p_guard_timer <= 0)
 		{
 			p_state = STATE.NORMAL;
 			break;
@@ -104,7 +162,6 @@ switch p_state
 			_coll.direction = point_direction(x, y, _coll.x, _coll.y);
 			direction = -direction;
 			p_state = STATE.NORMAL;
-			break;
 		}
 		
 		var _x = lengthdir_x(spd, direction);
@@ -112,6 +169,27 @@ switch p_state
 		xx = lerp(xx, _x, 0.2);
 		yy = lerp(yy, _y, 0.2);
 		break;
+	
+	case STATE.TEST_GUARD:
+		
+		//var _coll = instance_place(x+xx, y+yy, obj_player_mad);
+		//if (_coll != noone)
+		//{
+		//	if (_coll.p_state == STATE.DASH)
+		//	{
+		//		_coll.p_dash_timer = _coll.p_dash_timer_max;
+		//		_coll.spd = -_coll.spd_dash;
+				
+		//		direction = -direction;
+		//	}
+		//}
+		
+		var _x = lengthdir_x(spd, direction);
+		var _y = lengthdir_y(spd, direction);
+		xx = lerp(xx, _x, 0.2);
+		yy = lerp(yy, _y, 0.2);
+		break;
+	#endregion
 }
 
 #region ANIMATIONS
@@ -126,9 +204,13 @@ if (tempo_trasformazione == 0)
 {
     switch(p_state)
     {
-        case STATE.NORMAL:
-            sprite_index = anim_walk[charid];
-            image_speed = lerp(0, 2, spd/spd_walk_normal)
+        case STATE.GUARD:
+    	case STATE.TEST_GUARD:
+    		sprite_index = anim_guard[player];
+    		break;
+    	case STATE.NORMAL:
+    		sprite_index = anim_walk[player];
+            image_speed = lerp(0, 2, spd/spd_walk_normal) 
             break;
     }
 }
@@ -208,7 +290,29 @@ y += yy;
 	
 #endregion
 
+/*
+#region ANIMATION
+var _anim_spd = clamp(spd, 0, spd/2);
+image_index += 0.05*_anim_spd;
+
+if (spd <= 0)
+	image_index = 0;
+
+switch (p_state)
+{
+	case STATE.GUARD:
+	case STATE.TEST_GUARD:
+		sprite_index = anim_guard[player];
+		break;
+	case STATE.NORMAL:
+		sprite_index = anim_walk[player];
+		break;
+}
+#endregion
+*/
+
 
 p_dash_timer = clamp(p_dash_timer, 0, p_dash_timer_max);
+p_guard_timer = clamp(p_guard_timer, 0, p_guard_timer_max);
 
 depth = -y;

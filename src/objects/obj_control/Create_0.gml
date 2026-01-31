@@ -13,6 +13,12 @@ crea_maschera = function(){
 	time_source_start(tempo_nuova_maschera);
 }
 
+crea_scatola = function(){
+	time_source_stop(tempo_prima_scatola);
+	instance_create_depth(x,y,depth,obj_falling_crate);
+	time_source_start(tempo_nuova_scatola);
+}
+
 inizio_sessione = function(){
 	startedSession = true;	
 }
@@ -33,7 +39,18 @@ tempo_prima_maschera = time_source_create
 	time_source_game,360,time_source_units_frames,crea_maschera
 )
 
-if room = room_game //cambia quando mergi il gioco
+tempo_nuova_scatola = time_source_create
+(
+	time_source_game,choose(180,540,480,360),time_source_units_frames,crea_scatola
+)
+	
+tempo_prima_scatola = time_source_create
+(
+	time_source_game,540,time_source_units_frames,crea_scatola
+)
+
+if room = room_game //cambia quando mergi il gioco in room != room_title, I guess?
 {
 	time_source_start(tempo_prima_maschera);
+	time_source_start(tempo_prima_scatola);
 }
