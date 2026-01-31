@@ -14,8 +14,8 @@
   "name":"obj_control",
   "overriddenProperties":[],
   "parent":{
-    "name":"Pacchetto_Zig",
-    "path":"folders/Libs/Pacchetto_Zig.yy",
+    "name":"zig",
+    "path":"folders/zig.yy",
   },
   "parentObjectId":null,
   "persistent":true,

@@ -8,6 +8,9 @@ if room = room_game
 		
 	if timeSession > 0 && startedSession
 		timeSession--;
+	else if timeSession <= 0
+		time_source_stop(tempo_nuova_maschera);
+	
 	
 	if timer_inizio > 0
 		timer_inizio--;

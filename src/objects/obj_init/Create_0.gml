@@ -28,7 +28,7 @@ if (release_mode_check(RELEASE_MODE_ENUMS.ZIG))
 }
 else if(release_mode_check(RELEASE_MODE_ENUMS.ALEXO))
 {
-    room_goto(room_test_lobby)
+    room_goto(room_test_alexo)
 }
 else if(release_mode_check(RELEASE_MODE_ENUMS.MAD))
 {

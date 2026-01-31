@@ -1,20 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"obj_mask",
+  "%Name":"obj_falling_crate",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player_mad","path":"objects/obj_player_mad/obj_player_mad.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_mask",
+  "name":"obj_falling_crate",
   "overriddenProperties":[],
   "parent":{
     "name":"zig",
     "path":"folders/zig.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_collider",
+    "path":"objects/obj_collider/obj_collider.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mask",
-    "path":"sprites/spr_mask/spr_mask.yy",
+    "name":"spr_crate",
+    "path":"sprites/spr_crate/spr_crate.yy",
   },
   "spriteMaskId":null,
   "visible":true,
