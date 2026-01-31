@@ -17,7 +17,7 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
     }
     
     if mudded
-	draw_sprite_ext(spr_mud,0,x,y,0.2,0.2,0,c_red,1);
+		draw_sprite_ext(spr_mud,0,x,y,0.2,0.2,0,c_red,1);
 }
 else 
 {
