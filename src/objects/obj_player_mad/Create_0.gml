@@ -61,6 +61,11 @@ hittable = function()
     p_spinto_count = 45
 }
 
+masked_smash = function()
+{
+	
+}
+
 
 #region FANGO
 mud_factor = 1;

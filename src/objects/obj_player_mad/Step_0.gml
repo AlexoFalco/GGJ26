@@ -137,6 +137,7 @@ if (_masked)
 		
 		#region SMASH
 		case STATE.SMASH:
+			
 			break;
 		#endregion
 	}
