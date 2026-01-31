@@ -2,6 +2,8 @@ with other		//se sposti in obj_player, cancella
 {
 	if other.is_touchable
 	{
+		tempo_detrasformazione = noone;
+		transformation = 0;
 		switch other.id_mask
 		{
 			case masks.drago: tempo_trasformazione = 180; break;
