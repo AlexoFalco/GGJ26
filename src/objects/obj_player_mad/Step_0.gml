@@ -163,7 +163,7 @@ else
 			spd = spd/2;
 		p_state = STATE.GUARD;
 	}
-	spd_walk = spd_walk_normal;
+	spd_walk = spd_walk_normal*mud_factor;
     accel = accel_normal;
     spd_walk_lerp = spd_walk_lerp_normal;
 	
