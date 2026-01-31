@@ -3,7 +3,7 @@
 
 event_inherited();
 
-text = "Exit"
+text = ["Exit","Esci"]
 on_click = function()
 {
     game_end()

@@ -3,7 +3,7 @@
 
 event_inherited();
 
-text = "New game!"
+text = ["PLAY!","GIOCA!"];
 on_click = function()
 {
     room_goto(room_menu_gameoptions)
