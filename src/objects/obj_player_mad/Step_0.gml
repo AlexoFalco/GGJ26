@@ -257,7 +257,7 @@ else
 			{
 				if (_coll.p_state != STATE.GUARD)
 				{
-                    _coll.p_spinto_count = 30
+                    _coll.hittable()
 					_coll.p_state = STATE.DASH;
 					_coll.direction = point_direction(x, y, _coll.x, _coll.y);
 					direction -= 180;	
@@ -300,6 +300,7 @@ else
 			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
 			if (_coll != noone)
 			{
+                _coll.hittable()
 				_coll.p_state = STATE.DASH;
 				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
 				direction = -direction;

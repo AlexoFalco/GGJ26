@@ -56,6 +56,11 @@ hit = function(_godmode_count = 30)
     p_godmode = _godmode_count
 }
 
+hittable = function()
+{
+    p_spinto_count = 45
+}
+
 
 #region FANGO
 mud_factor = 1;
