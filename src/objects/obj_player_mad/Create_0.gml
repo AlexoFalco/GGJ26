@@ -1,4 +1,5 @@
 anim_walk = [spr_player_1_walk, spr_player_2_walk, spr_player_3_walk, spr_player_4_walk];
+anim_guard = [spr_player_1_guard, spr_player_2_guard, spr_player_3_guard, spr_player_4_guard];
 sprite_index = anim_walk[player];
 
 //Status vars
@@ -6,8 +7,9 @@ p_health_max = 3;
 p_health = p_health_max;
 p_dash_timer_max = 100;
 p_dash_timer = p_dash_timer_max;
+p_dash_timer_spd = 5;
 p_guard_timer_max = 100;
-p_dash_timer = p_dash_timer_max;
+p_guard_timer = p_guard_timer_max;
 
 //Movement vars
 spd = 0;
