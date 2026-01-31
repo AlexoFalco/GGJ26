@@ -10,10 +10,13 @@
   "name":"obj_menu_gameoptions",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu",
-    "path":"folders/Menu.yy",
+    "name":"Game options",
+    "path":"folders/Menu/Game options.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_base_menu",
+    "path":"objects/obj_base_menu/obj_base_menu.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

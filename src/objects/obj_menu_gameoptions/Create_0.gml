@@ -1,17 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-button_index = 0
+event_inherited()
 
-
-_draw_button = function(_index, _x, _y, _text)
-{
-    if (button_index == _index)
+players_count = 4
+for (var i = 2; i <= players_count; i++) {
+    var _text = $"{i} players";
+    var _onclick = method({_count : i},function()
     {
-        draw_set_colour(c_gray)
-    }
-    else 
-    {
-    	draw_set_colour(c_white)
-    }
-    draw_text(_x, _y, _text)
+        global.__temp.players_count = _count; 
+        room_goto(room_test_lobby);
+    })
+	var _obj = instance_create_button(self, i-2, room_width/2, 300+i*100, _text, _onclick)
+    _obj.sprite_index = spr_base_button
 }

@@ -1,22 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menu_main",
+  "%Name":"obj_base_menu",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menu_main",
+  "name":"obj_base_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Main",
-    "path":"folders/Menu/Main.yy",
+    "name":"Menu",
+    "path":"folders/Menu/Menu.yy",
   },
-  "parentObjectId":{
-    "name":"obj_base_menu",
-    "path":"objects/obj_base_menu/obj_base_menu.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
