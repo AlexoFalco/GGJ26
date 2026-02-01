@@ -61,7 +61,7 @@ part_cloud = function(mask = false)
 	part_ind = true;
 	instance_create_depth(x-40*image_xscale, y+32, depth-1, obj_part_cloud);
 	var _n = irandom_range(0, 3);
-	var _id = player;
+	var _id = charid;
 	if (mask) _id = 4;
 	audio_play_sound(snd_walk[_id, _n], 1, false, 0.7, 0, random_range(0.9, 1.1)); 
 }
@@ -76,9 +76,10 @@ hit = function(_godmode_count = 30)
 
 hittable = function()
 {
+    var _id = charid
 	var _n = irandom_range(0, 2);
 	audio_play_sound(snd_hit[_n], 1, false);
-	audio_play_sound(snd_hurt[player], 1, false);
+	audio_play_sound(snd_hurt[_id], 1, false);
     p_spinto_count = 45;
 }
 

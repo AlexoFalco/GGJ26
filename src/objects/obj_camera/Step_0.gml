@@ -37,10 +37,10 @@ camera_set_view_pos(camera_ref, camera_x, camera_y)
 var _ww = 1920
 var _hh = 1080
 var _min_camera_scale = 1
-var _max_camera_scale = 2.5
-var _k_dist = 700
-var _smooth_camera = 1600
-var _inc_camera = 0.01
+var _max_camera_scale = 2.6
+var _k_dist = 600
+var _smooth_camera = 1100
+var _inc_camera = 0.02
 var _a = 200
 
 with(obj_player_mad)
