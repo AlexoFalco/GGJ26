@@ -23,7 +23,7 @@ if !smuccata
 	if flash
 	{
 		draw_sprite_ext(spr_mucca_alert,0,_xx,y,1,1,0,c_white,1)
-		draw_sprite_ext(spr_arrow,0,_xarrow,y-50,as,1,0,c_red,1)
+		//draw_sprite_ext(spr_arrow,0,_xarrow,y-50,as,1,0,c_red,1)
 	}
 	
 	
