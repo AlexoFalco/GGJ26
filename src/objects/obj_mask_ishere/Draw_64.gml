@@ -1,3 +1,4 @@
+if (obj_game_manager.flag_victory) return;
 var vw = 1920;
 var vh = 1080;
 display_set_gui_size(vw, vh);

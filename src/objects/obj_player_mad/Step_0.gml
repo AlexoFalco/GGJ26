@@ -4,6 +4,7 @@
 //	exit;
 //}
 	
+if (obj_game_manager.flag_victory) return;
 
 if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
 {
@@ -11,6 +12,8 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
     {
         var _obj = instance_find(obj_player_mad, 0)
         _obj.p_health -= 1
+        //instance_destroy(obj_player_mad)
+
     }
 }
 
