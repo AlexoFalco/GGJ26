@@ -245,6 +245,7 @@
     {"id":{"name":"spr_tasti_steam","path":"sprites/spr_tasti_steam/spr_tasti_steam.yy",},},
     {"id":{"name":"spr_tastiera","path":"sprites/spr_tastiera/spr_tastiera.yy",},},
     {"id":{"name":"Sprite30","path":"sprites/Sprite30/Sprite30.yy",},},
+    {"id":{"name":"Sprite67","path":"sprites/Sprite67/Sprite67.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
