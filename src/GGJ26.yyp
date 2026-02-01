@@ -2,8 +2,8 @@
   "$GMProject":"v1",
   "%Name":"GGJ26",
   "AudioGroups":[
-    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"v1","%Name":"effetti_sonori","exportDir":"","name":"effetti_sonori","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"effetti_sonori","name":"effetti_sonori","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[
@@ -67,8 +67,11 @@
     {"id":{"name":"obj_collider","path":"objects/obj_collider/obj_collider.yy",},},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},
     {"id":{"name":"obj_crate","path":"objects/obj_crate/obj_crate.yy",},},
+    {"id":{"name":"obj_effect_death","path":"objects/obj_effect_death/obj_effect_death.yy",},},
     {"id":{"name":"obj_falling_crate","path":"objects/obj_falling_crate/obj_falling_crate.yy",},},
+    {"id":{"name":"obj_game_end","path":"objects/obj_game_end/obj_game_end.yy",},},
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
+    {"id":{"name":"obj_game_victory","path":"objects/obj_game_victory/obj_game_victory.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_init","path":"objects/obj_init/obj_init.yy",},},
     {"id":{"name":"obj_lightray","path":"objects/obj_lightray/obj_lightray.yy",},},

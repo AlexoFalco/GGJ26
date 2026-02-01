@@ -1,6 +1,8 @@
 
 if room = room_arena
 {
+    if obj_game_manager.flag_victory return;
+        
 	if startedSession
 	{
 		

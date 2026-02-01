@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (instance_number(obj_player_mad) == 0) return;
+
 //reset variabili (vanno ricalcolati)
 player_x_min = 99999999999999999
 player_x_max = 0
@@ -30,6 +32,9 @@ player_y_mid = player_y_min + (player_y_max-player_y_min)*0.5
 
 camera_x = player_x_mid-camera_width/2
 camera_y = player_y_mid-camera_height/2
+
+camera_x = lerp(camera_x, camera_get_view_x(camera_ref), 0.975)
+camera_y = lerp(camera_y, camera_get_view_y(camera_ref), 0.975)
 
 camera_set_view_pos(camera_ref, camera_x, camera_y)
 

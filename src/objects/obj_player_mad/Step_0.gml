@@ -4,8 +4,28 @@
 //	exit;
 //}
 	
+if (obj_game_manager.flag_victory) return;
+
+if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
+{
+    if (keyboard_check_pressed(vk_f12))
+    {
+        var _obj = instance_find(obj_player_mad, 0)
+        _obj.p_health -= 1
+        //instance_destroy(obj_player_mad)
+
+    }
+}
+
 scr_comandi();
 
+if (p_health <= 0)
+{
+    var _eff = instance_create_layer(x, y, "Managers", obj_effect_death)
+    _eff.sprite_index = sprite_index
+    _eff.image_index = image_index
+    instance_destroy()
+}
 
 var stick_dir = point_direction(0, 0, haxis, vaxis);
 var stick_dist = point_distance(0, 0, abs(haxis), abs(vaxis));
@@ -474,7 +494,7 @@ if (collision_with_any(x, y + yy, _collisions)) {
 
 if (collision_with_any(x, y, _collisions)) {
     var resolved = false;
-    var max_distance = 16;
+    var max_distance = 128;
 
     for (var i = 1; i <= max_distance; ++i) {
         var directions = [
