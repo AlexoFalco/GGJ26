@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ac_get_curve_value",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ac_get_curve_value",
+  "parent":{
+    "name":"Libs",
+    "path":"folders/Libs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,8 +1,9 @@
 draw_self();
-draw_set_color(c_aqua);
-draw_circle(x,y,raggio,true);
 
-with obj_player_mad
+if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
 {
-	debug_text(mud_factor,other.x,other.y);	
+    draw_set_color(c_aqua);
+    draw_circle(x,y,raggio,true);
+    
+    draw_text(x, y, raggio)
 }

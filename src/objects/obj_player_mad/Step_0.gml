@@ -261,7 +261,7 @@ else
 	
 		#region DASH
 		case STATE.DASH:
-			spd = spd_dash;
+			spd = spd_dash * mud_factor;
 			spd = clamp(spd, 0, spd_dash);
 		
 			p_dash_timer -= p_dash_timer_spd;

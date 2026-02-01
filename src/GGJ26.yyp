@@ -46,6 +46,7 @@
   },
   "name":"GGJ26",
   "resources":[
+    {"id":{"name":"ac_pot","path":"animcurves/ac_pot/ac_pot.yy",},},
     {"id":{"name":"fnt_annuncino","path":"fonts/fnt_annuncino/fnt_annuncino.yy",},},
     {"id":{"name":"fnt_debug","path":"fonts/fnt_debug/fnt_debug.yy",},},
     {"id":{"name":"fnt_gioco","path":"fonts/fnt_gioco/fnt_gioco.yy",},},
@@ -100,6 +101,7 @@
     {"id":{"name":"room_test_alexo","path":"rooms/room_test_alexo/room_test_alexo.yy",},},
     {"id":{"name":"room_test_camera","path":"rooms/room_test_camera/room_test_camera.yy",},},
     {"id":{"name":"room_test_mad","path":"rooms/room_test_mad/room_test_mad.yy",},},
+    {"id":{"name":"ac_get_curve_value","path":"scripts/ac_get_curve_value/ac_get_curve_value.yy",},},
     {"id":{"name":"barra_ps","path":"scripts/barra_ps/barra_ps.yy",},},
     {"id":{"name":"change_variable","path":"scripts/change_variable/change_variable.yy",},},
     {"id":{"name":"clicca","path":"scripts/clicca/clicca.yy",},},

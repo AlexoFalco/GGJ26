@@ -1,7 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if (open == 0)
-{
-    open = 1
-}
+open = 0
+count = 0
+count_max = 120
