@@ -13,4 +13,5 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO, RELEASE_MODE_ENUMS.ALEXO))
         _obj.player = _item.inputid == 0 ? 0 : _item.inputid+1
         _obj.charid = _item.charid
     }
+	alarm[0] = 120;
 }
