@@ -3,9 +3,9 @@
   "%Name":"mask_player_1",
   "bboxMode":2,
   "bbox_bottom":254,
-  "bbox_left":1,
-  "bbox_right":254,
-  "bbox_top":1,
+  "bbox_left":22,
+  "bbox_right":230,
+  "bbox_top":116,
   "collisionKind":2,
   "collisionTolerance":0,
   "ConfigValues":{
