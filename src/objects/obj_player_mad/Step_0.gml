@@ -381,6 +381,9 @@ if (!_masked)
     		sprite_index = anim_walk[charid];
             image_speed = lerp(0, 2, spd/spd_walk_normal) 
             break;
+        case STATE.DASH:
+            sprite_index = anim_dash[charid]
+            break;
     }
 }
 else 

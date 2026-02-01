@@ -40,8 +40,8 @@
     "path":"sprites/spr_player_1_walk/spr_player_1_walk.yy",
   },
   "spriteMaskId":{
-    "name":"mask_player",
-    "path":"sprites/mask_player/mask_player.yy",
+    "name":"mask_player_1",
+    "path":"sprites/mask_player_1/mask_player_1.yy",
   },
   "visible":true,
 }

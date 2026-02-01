@@ -1,5 +1,6 @@
 anim_walk = [spr_player_1_walk, spr_player_2_walk, spr_player_3_walk, spr_player_4_walk];
 anim_guard = [spr_player_1_guard, spr_player_2_guard, spr_player_3_guard, spr_player_4_guard];
+anim_dash = [spr_player_1_dash, spr_player_1_dash, spr_player_1_dash, spr_player_1_dash];
 anim_walk_m = spr_player_m_walk;
 anim_smash = spr_player_m_smash;
 anim_shake = 0;
@@ -111,7 +112,7 @@ masked_smash = function()
 		});
 	}
 	var _list = ds_list_create();
-	var _coll = collision_circle_list(x, y, 320, obj_player_mad, true, true, _list, false);
+	var _coll = collision_circle_list(x, y, 700, obj_player_mad, true, true, _list, false);
 	for (var i=0; i<ds_list_size(_list); i++)
 	{
 		var _curr_inst = _list[| i];
