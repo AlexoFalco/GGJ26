@@ -36,26 +36,7 @@ for (var i = 0; i < 32; i++)
     
 	if (gamepad_button_check_pressed(i, gp_face2))
     {
-        var _playerid = noone
-        
-        
-        var exists_index = array_find_index(players_list, method({_inputid: i}, function(item){return _inputid == item.inputid}))
-        
-        if (exists_index != -1)
-        {
-            _playerid = players_list[exists_index].playerid
-            array_delete(players_list, exists_index, 1)
-            
-            for (var n = 0; n < instance_number(obj_lobby_slot); n++) 
-            {
-            	var _obj = instance_find(obj_lobby_slot, n)
-                if (_obj.playerid == _playerid)
-                {
-                    _obj.inputid = noone 
-                    _obj.is_ready = false
-                }
-            }
-        }
+        room_goto(room_menu_main)
     }
 }
 

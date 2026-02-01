@@ -48,6 +48,7 @@
   "resources":[
     {"id":{"name":"ac_pot","path":"animcurves/ac_pot/ac_pot.yy",},},
     {"id":{"name":"font_button","path":"fonts/font_button/font_button.yy",},},
+    {"id":{"name":"font_game_info","path":"fonts/font_game_info/font_game_info.yy",},},
     {"id":{"name":"font_subtitle","path":"fonts/font_subtitle/font_subtitle.yy",},},
     {"id":{"name":"font_text","path":"fonts/font_text/font_text.yy",},},
     {"id":{"name":"font_title","path":"fonts/font_title/font_title.yy",},},
@@ -152,6 +153,7 @@
     {"id":{"name":"spr_iconine","path":"sprites/spr_iconine/spr_iconine.yy",},},
     {"id":{"name":"spr_lingua","path":"sprites/spr_lingua/spr_lingua.yy",},},
     {"id":{"name":"spr_lobby_slot_arrow","path":"sprites/spr_lobby_slot_arrow/spr_lobby_slot_arrow.yy",},},
+    {"id":{"name":"spr_lobby_slot_selected","path":"sprites/spr_lobby_slot_selected/spr_lobby_slot_selected.yy",},},
     {"id":{"name":"spr_lobby_slot","path":"sprites/spr_lobby_slot/spr_lobby_slot.yy",},},
     {"id":{"name":"spr_lobby","path":"sprites/spr_lobby/spr_lobby.yy",},},
     {"id":{"name":"spr_mask","path":"sprites/spr_mask/spr_mask.yy",},},

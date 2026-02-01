@@ -6,6 +6,10 @@ inputid = noone
 charid = noone
 is_ready = false
 
+ready_count = 0
+
+chars_name = ["Grrrr", "Gerry", "Donovan", "Gertrude"]
+
 update_char_without_conflict = function(_input_dir)
 {
     var _char_list_used = []
