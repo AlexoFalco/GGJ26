@@ -1,8 +1,9 @@
 anim_walk = [spr_player_1_walk, spr_player_2_walk, spr_player_3_walk, spr_player_4_walk];
 anim_guard = [spr_player_1_guard, spr_player_2_guard, spr_player_3_guard, spr_player_4_guard];
-anim_dash = [spr_player_1_dash, spr_player_1_dash, spr_player_1_dash, spr_player_1_dash];
+anim_dash = [spr_player_1_dash, spr_player_2_dash, spr_player_3_dash, spr_player_4_dash];
 anim_walk_m = spr_player_m_walk;
-anim_smash = spr_player_m_smash;
+anim_dash_m = spr_player_m_dash;
+anim_smash_m = spr_player_m_smash;
 anim_shake = 0;
 sprite_index = anim_walk[0];
 

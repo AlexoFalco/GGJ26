@@ -37,7 +37,7 @@ else
 
 var _masked = (tempo_trasformazione > 0);
 
-var _y_start = _masked ? -500 :  - 300
+var _y_start = _masked ? -500 :  - 250
 
 var _wdelta = 40
 for (var i = 0; i < p_health_max; i++) {

@@ -407,9 +407,13 @@ else
             sprite_index = anim_walk_m;
             image_speed = lerp(0, 2.2, spd/spd_walk_mask)
             break;
+        
+        case STATE.DASH:
+            sprite_index = anim_dash_m
+            break;
 		
 		case STATE.SMASH:
-			sprite_index = anim_smash;
+			sprite_index = anim_smash_m;
 			image_index = (smash_timer >= smash_time);
 			break;
     }
