@@ -5,7 +5,7 @@ with other
 		other.is_pressed = true;
 		time_source_start(other.tempo_per_disattivare);
 		
-		var _xi, _dir, _partenza = 500, _yy = choose(room_height/2,room_height/3,room_height/4,2*room_height/3,3*room_height/4);
+		var _xi, _dir, _partenza = 3000, _yy = irandom_range(300,room_height-300);
 		switch other._id
 		{
 			case 0: {
