@@ -182,6 +182,7 @@
     {"id":{"name":"sfx_title_ale","path":"sounds/sfx_title_ale/sfx_title_ale.yy",},},
     {"id":{"name":"sfx_title_ferlito","path":"sounds/sfx_title_ferlito/sfx_title_ferlito.yy",},},
     {"id":{"name":"sfx_title_leira","path":"sounds/sfx_title_leira/sfx_title_leira.yy",},},
+    {"id":{"name":"sfx_title_lorenzo","path":"sounds/sfx_title_lorenzo/sfx_title_lorenzo.yy",},},
     {"id":{"name":"sfx_title_mad","path":"sounds/sfx_title_mad/sfx_title_mad.yy",},},
     {"id":{"name":"sfx_title_zig","path":"sounds/sfx_title_zig/sfx_title_zig.yy",},},
     {"id":{"name":"snd_moveselect","path":"sounds/snd_moveselect/snd_moveselect.yy",},},
