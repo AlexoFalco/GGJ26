@@ -47,11 +47,6 @@
   "name":"GGJ26",
   "resources":[
     {"id":{"name":"ac_pot","path":"animcurves/ac_pot/ac_pot.yy",},},
-    {"id":{"name":"fnt_annuncino","path":"fonts/fnt_annuncino/fnt_annuncino.yy",},},
-    {"id":{"name":"fnt_debug","path":"fonts/fnt_debug/fnt_debug.yy",},},
-    {"id":{"name":"fnt_gioco","path":"fonts/fnt_gioco/fnt_gioco.yy",},},
-    {"id":{"name":"fnt_grande","path":"fonts/fnt_grande/fnt_grande.yy",},},
-    {"id":{"name":"fnt_titolo","path":"fonts/fnt_titolo/fnt_titolo.yy",},},
     {"id":{"name":"font_button","path":"fonts/font_button/font_button.yy",},},
     {"id":{"name":"font_text","path":"fonts/font_text/font_text.yy",},},
     {"id":{"name":"font_title","path":"fonts/font_title/font_title.yy",},},
