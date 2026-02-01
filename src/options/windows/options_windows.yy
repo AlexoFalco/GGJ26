@@ -5,7 +5,7 @@
     "Gioco":{
       "option_windows_start_fullscreen":"true",
       "option_windows_display_cursor":"false",
-      "option_windows_interpolate_pixels":"true",
+      "option_windows_interpolate_pixels":"false",
     },
     "Alexo":{
       "option_windows_start_fullscreen":"false",

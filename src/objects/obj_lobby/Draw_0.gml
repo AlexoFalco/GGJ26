@@ -16,18 +16,21 @@ if (flag_debug_mode)
 }
 
 draw_set_colour(c_white)
-draw_set_font(font_title)
-draw_set_halign(fa_left)
+draw_set_font(font_subtitle)
+draw_set_halign(fa_middle)
 draw_set_valign(fa_top)
-draw_text(10, 10, "Lobby")
+draw_text(1920/2+35, 20, "Lobby")
 
 if (countdown_to_start_flag)
 {
-    draw_set_halign(fa_right)
+    draw_set_halign(fa_center)
     var _value = floor((countdown_to_start_max - countdown_to_start)/60)
     if (_value == 0)
     {
         _value = "Go!"
     }
-    draw_text(1920-50, 1080-100, _value)
+    else {
+    	_value = "Ready..."
+    }
+    draw_text(1920-250, 1080-140, _value)
 }

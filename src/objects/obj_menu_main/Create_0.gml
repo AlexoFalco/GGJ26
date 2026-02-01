@@ -1,16 +1,7 @@
 event_inherited()
 
-for (var _i = 0; _i <= 5; _i++)
-{
-	var _button;
-	switch _i
-	{
-		case 0: _button = obj_button_iniziapartita; break;
-		case 1: _button = obj_button_lingua; break;
-		case 2: _button = obj_button_info; break;
-		case 3: _button = obj_button_opzioni; break;
-		case 4: _button = obj_button_crediti; break;
-		case 5: _button = obj_button_esci; break;
-	}
-	instance_create_button_obj(self, _i, camera_width_mid, 225+125*_i, _button)
-}
+instance_create_button_obj(self, 0, camera_width_mid-50, 550, obj_button_iniziapartita)
+instance_create_button_obj(self, 1, camera_width_mid-50, 700, obj_button_lingua)
+instance_create_button_obj(self, 2, camera_width_mid-50, 800, obj_button_info)
+instance_create_button_obj(self, 3, camera_width_mid-50, 900, obj_button_crediti)
+instance_create_button_obj(self, 4, camera_width_mid-50, 1000, obj_button_esci)

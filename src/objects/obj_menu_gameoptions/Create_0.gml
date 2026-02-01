@@ -11,6 +11,6 @@ for (var i = 2; i <= players_count; i++) {
         global.__temp.players_count = _count; 
         room_goto(room_lobby);
     })
-	var _obj = instance_create_button(self, i-2, room_width/2, 300+i*100, _text[lang.eng], _onclick, _text[lang.ita])
+	var _obj = instance_create_button(self, i-2, room_width/2-50, 550+i*100, _text[lang.eng], _onclick, _text[lang.ita])
     _obj.sprite_index = spr_base_button
 }

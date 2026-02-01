@@ -22,13 +22,13 @@ if (!release_mode_check(RELEASE_MODE_ENUMS.GIOCO))
 if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO))
 {
     for (var i = 0; i < global.__temp.players_count; i++) {
-    	var _obj = instance_create_layer(300+i*300, 500, "Instances", obj_lobby_slot)
+    	var _obj = instance_create_layer(157+150+i*300, 287+175, "Instances", obj_lobby_slot)
         _obj.playerid = i
     }
 }
 else {
     for (var i = 0; i < 2; i++) {
-    	var _obj = instance_create_layer(300+i*300, 500, "Instances", obj_lobby_slot)
+    	var _obj = instance_create_layer(157+150+i*300, 287+175, "Instances", obj_lobby_slot)
         _obj.playerid = i
     }
 }

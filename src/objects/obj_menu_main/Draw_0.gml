@@ -5,9 +5,11 @@ event_inherited()
 
 draw_set_colour(c_white)
 draw_set_font(font_title)
-draw_set_halign(fa_left)
+draw_set_halign(fa_right)
 draw_set_valign(fa_top)
-draw_text(10, 10, "Muscle Masquerade")
+draw_text(1920/2-300, 125, "Muscle")
+draw_set_halign(fa_left)
+draw_text(1920/2+200, 125, "Masquerade")
 
 
 //draw_set_font(font_button)
