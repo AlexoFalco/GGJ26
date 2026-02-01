@@ -491,7 +491,7 @@ if (collision_with_any(x, y + yy, _collisions)) {
 
 if (collision_with_any(x, y, _collisions)) {
     var resolved = false;
-    var max_distance = 16;
+    var max_distance = 128;
 
     for (var i = 1; i <= max_distance; ++i) {
         var directions = [
