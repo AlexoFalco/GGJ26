@@ -122,6 +122,7 @@ masked_smash = function()
 		_curr_inst.p_state = STATE.DASH;
 		_curr_inst.direction = point_direction(x, y, _curr_inst.x, _curr_inst.y);
 	}
+	ds_list_destroy(_list);
 }
 
 

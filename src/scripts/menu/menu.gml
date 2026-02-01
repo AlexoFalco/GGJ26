@@ -548,65 +548,7 @@ function menu_giocatori_draw()
 	}*/
 }
 #endregion
-#region RICONOSCIMENTI
-function riconoscimenti_step(){
-	
-	function test_music(){
-		audio_stop_all();
-		switch selemusica
-		{
-			case 1: tema_musicale = snd_windmill; break;
-			case 2: tema_musicale = snd_robobunny; break;	case 3: tema_musicale = snd_funkyisland; break;	case 4: tema_musicale = snd_nightchase; break;
-			case 5: tema_musicale = snd_skeletondance; break;	case 6: tema_musicale = snd_festival; break;	case 7: tema_musicale = snd_breakin; break;
-			case 8: tema_musicale = snd_hauntedengines; break;	case 9: tema_musicale = snd_souleatingdesert; break;	case 10: tema_musicale = snd_starcatching; break;
-			case 0: default: tema_musicale = snd_1080skies;
-		}
-		parte_audio(global.snd,tema_musicale,1,true);
-	}
-	
-	if sxPress
-		selemusica--;
-	if dxPress
-		selemusica++;
-		
-	selemusica = (selemusica + 11) mod (11);
-	
-	if confirmPress
-	{
-		test_music();
-	}
-	
-	if (backPress || pausePress)
-		riconoscimenti = false;
-}
 
-function riconoscimenti_draw(){
-	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
-	_credits = @"Game by Zigoon (Marco Luigi D'Amelio). Almost everything not mentioned here 
-is done by him (if not, he didn't remember it and humbly apologizes).
-
-AI behavior: 
-Goldensun (Aurelio D'Amelio)
-
-Music: 
-Red&Green
-
-Fonts:
-'XLMonoAlt' by fontcollector
-'Bugfast' by Chequered Ink
-'besttime' by khurasantype";
-	draw_text_border(_guix/16,_guiy/2,fnt_annuncino,_credits,,,,,,700,fa_left);
-	
-var _xmus = _guix*13/15, _ymus_i = _guiy*3/7;
-
-	draw_text_border(_xmus,_ymus_i,fnt_annuncino,
-		$"{scr_input(comandi.left)}/{scr_input(comandi.right)}: change music",
-		$"{scr_input(comandi.left)}/{scr_input(comandi.right)}: cambia musica",,,,,100);
-	draw_text_border(_xmus,_ymus_i+30,fnt_grande,selemusica);
-	draw_text_border(_xmus,_ymus_i+70,fnt_annuncino,lista_musiche[selemusica],,,,,,100);
-	
-}
-#endregion
 
 
 #region PAUSA
@@ -940,3 +882,17 @@ function scr_impostazioni_draw()
 	
 	
 }
+
+#region RICONOSCIMENTI
+//function riconoscimenti_step(){
+	
+//	if (backPress || pausePress)
+//		riconoscimenti = false;
+//}
+
+function riconoscimenti_draw(){
+	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
+	_credits = "Game developed for the\n2026 Edition of the Global Game Jam\n\nProgrammers\nAlexoFalco\nMyMadnessWorks\nZigoon\n\nGraphic design\nLeira\nLorenzo\n\nMusic\n[inserire provenienza musica]";
+	draw_text_border(_guix/2,5*_guiy/7,font_text,_credits,,,,,,1000);
+}
+#endregion

@@ -1,0 +1,10 @@
+var vw = 1920;
+var vh = 1080;
+display_set_gui_size(vw, vh);
+draw_set_font(font_title);
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_alpha(alpha);
+draw_text_ext_transformed(vw/2, vh/2, str, 128, vw, 2, 2, 0);
+draw_set_alpha(1);

@@ -23,6 +23,7 @@ if room = room_game
 	}
 }
 
-
+if room = room_riconoscimenti
+	riconoscimenti_draw();
 	
 	

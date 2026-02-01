@@ -1,4 +1,4 @@
-room_restart();
+/*room_restart();
 timeSession = timeSessionBase;
 startedSession = false;
 timer_inizio = 240;

@@ -24,3 +24,9 @@ else
 	
 if impostazioni
 	scr_impostazioni_step();
+	
+if room = room_riconoscimenti
+{
+	if confirmPress || backPress || pausePress
+		room_goto(room_menu_main);
+}
