@@ -16,3 +16,5 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO, RELEASE_MODE_ENUMS.ALEXO))
     }
 	alarm[0] = 120;
 }
+
+music_ref = audio_play_sound(music_game, 1, true)
