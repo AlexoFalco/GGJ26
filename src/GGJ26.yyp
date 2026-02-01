@@ -139,6 +139,7 @@
     {"id":{"name":"traduzioni","path":"scripts/traduzioni/traduzioni.yy",},},
     {"id":{"name":"volume","path":"scripts/volume/volume.yy",},},
     {"id":{"name":"music_game","path":"sounds/music_game/music_game.yy",},},
+    {"id":{"name":"music_menu","path":"sounds/music_menu/music_menu.yy",},},
     {"id":{"name":"sfx_click","path":"sounds/sfx_click/sfx_click.yy",},},
     {"id":{"name":"sfx_mask_fall","path":"sounds/sfx_mask_fall/sfx_mask_fall.yy",},},
     {"id":{"name":"sfx_mask_land","path":"sounds/sfx_mask_land/sfx_mask_land.yy",},},

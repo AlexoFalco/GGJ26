@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"music_game",
+  "%Name":"music_menu",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":56.0,
+  "duration":8.0,
   "exportDir":"",
-  "name":"music_game",
+  "name":"music_menu",
   "parent":{
     "name":"audio",
     "path":"folders/audio.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"music_game.ogg",
+  "soundFile":"music_menu.ogg",
   "volume":1.0,
 }

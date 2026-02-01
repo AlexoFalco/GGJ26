@@ -3,7 +3,7 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
 {
     draw_sprite(mask_index, 0, x, y);
 	var _alpha = lerp(0.5, 1, abs(dsin(current_time/5)))
-	draw_sprite_ext(spr_player_arrow, 0, x, y+12, _arrow_scale, _arrow_scale, direction, arrow_col[player], _alpha);
+	draw_sprite_ext(spr_player_arrow, 0, x, y+12, _arrow_scale, _arrow_scale, direction, arrow_col[charid], _alpha);
     draw_sprite_ext(sprite_index, image_index, x+random_range(-anim_shake, anim_shake), y+smash_yplus+random_range(-anim_shake, anim_shake), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
     draw_set_font(font_title)
     draw_text(x, y-20, p_spinto_count)
@@ -22,7 +22,7 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO) == false)
 else 
 {
 	var _alpha = lerp(0.7, 1, abs(dsin(current_time/5)))
-	draw_sprite_ext(spr_player_arrow, 0, x, y+12, _arrow_scale, _arrow_scale, direction, arrow_col[player], _alpha);
+	draw_sprite_ext(spr_player_arrow, 0, x, y+12, _arrow_scale, _arrow_scale, direction, arrow_col[charid], _alpha);
 	
 	//var _scale = image_xscale;
 	//if (sprite_index == spr_player_4_walk) _scale = image_xscale*0.2;
