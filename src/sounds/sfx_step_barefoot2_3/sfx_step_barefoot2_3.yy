@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_step_barefoot2_3",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.6524263,
+  "exportDir":"",
+  "name":"sfx_step_barefoot2_3",
+  "parent":{
+    "name":"footsteps",
+    "path":"folders/audio/footsteps.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_step_barefoot2_3.ogg",
+  "volume":1.0,
+}

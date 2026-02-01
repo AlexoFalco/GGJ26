@@ -5,6 +5,13 @@ anim_smash = spr_player_m_smash;
 anim_shake = 0;
 sprite_index = anim_walk[0];
 
+snd_walk[0] = [sfx_step_barefoot_1, sfx_step_barefoot_2, sfx_step_barefoot_1, sfx_step_barefoot_2];
+snd_walk[1] = [sfx_step_shoes_1, sfx_step_shoes_2, sfx_step_shoes_3, sfx_step_shoes_4];
+snd_walk[2] = [sfx_step_boots_1, sfx_step_boots_2, sfx_step_boots_3, sfx_step_boots_4];
+snd_walk[3] = [sfx_step_barefoot2_1, sfx_step_barefoot2_2, sfx_step_barefoot2_3, sfx_step_barefoot2_4];
+snd_walk[4] = [sfx_step_mask_1, sfx_step_mask_2, sfx_step_mask_3, sfx_step_mask_4];
+snd_hit = [sfx_player_hit_1, sfx_player_hit_2, sfx_player_hit_3];
+snd_hurt = [sfx_player_hurt_goblaster, sfx_player_hurt_jerry, sfx_player_hurt_donovan, sfx_player_hurt_gertrude];
 arrow_col = [c_green, c_blue, c_red, c_yellow];
 
 //Status vars
@@ -47,10 +54,14 @@ tempo_trasformazione = 0;
 tempo_trasformazione_max = 0
 
 part_ind = false;
-part_cloud = function()
+part_cloud = function(mask = false)
 {
 	part_ind = true;
 	instance_create_depth(x-40*image_xscale, y+32, depth-1, obj_part_cloud);
+	var _n = irandom_range(0, 3);
+	var _id = player;
+	if (mask) _id = 4;
+	audio_play_sound(snd_walk[_id, _n], 1, false, 0.7, 0, random_range(0.9, 1.1)); 
 }
 
 hit = function(_godmode_count = 30)
@@ -63,7 +74,10 @@ hit = function(_godmode_count = 30)
 
 hittable = function()
 {
-    p_spinto_count = 45
+	var _n = irandom_range(0, 2);
+	audio_play_sound(snd_hit[_n], 1, false);
+	audio_play_sound(snd_hurt[player], 1, false);
+    p_spinto_count = 45;
 }
 
 
@@ -75,6 +89,7 @@ smash_yplus = 0;
 smash_yplus_max = -64;
 masked_smash = function()
 {
+	audio_play_sound(sfx_player_mask_smash, 1, false);
 	for (var i=1; i<9; i++)
 	{
 		var n = 0;

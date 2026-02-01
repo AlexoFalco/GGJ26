@@ -8,6 +8,10 @@ if (open == 1)
         
         if (count > count_max/2)
         { 
+			if (image_index != 1)
+			{
+				audio_play_sound(sfx_pot_splash, 1, false);
+			}
             image_index = 1
         }
 

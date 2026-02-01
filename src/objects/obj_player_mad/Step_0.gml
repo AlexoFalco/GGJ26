@@ -172,6 +172,11 @@ if (_masked)
 			yy = lerp(yy, _y, 0.2);
 			break;
 		#endregion
+		
+		case STATE.DASH:
+		case STATE.GUARD:
+			p_state = STATE.NORMAL;
+			break;
 	}
 }
 else 
@@ -181,6 +186,9 @@ else
 		
 	if (confirmPress && p_state == STATE.NORMAL && p_dash_timer == p_dash_timer_max)
 	{
+		if (audio_is_playing(sfx_player_dash))
+			audio_stop_sound(sfx_player_dash);
+		audio_play_sound(sfx_player_dash, 1, false);
 		p_state = STATE.DASH;
 		spd = spd_dash;
 	}
@@ -189,6 +197,9 @@ else
 	{
 		if (spd != 0)
 			spd = spd/2;
+		if (audio_is_playing(sfx_player_guard))
+			audio_stop_sound(sfx_player_guard);
+		audio_play_sound(sfx_player_guard, 1, false);
 		p_state = STATE.GUARD;
 	}
 	spd_walk = spd_walk_normal*mud_factor;
@@ -324,7 +335,8 @@ else
 			var _coll = instance_place(x+xx, y+yy, obj_player_mad);
 			if (_coll != noone)
 			{
-                _coll.hittable()
+				audio_play_sound(sfx_player_parry, 1, false);
+                _coll.hittable();
 				_coll.p_state = STATE.DASH;
 				_coll.direction = point_direction(x, y, _coll.x, _coll.y);
 				direction = -direction;
@@ -403,7 +415,7 @@ image_index = image_index mod 2;
 if (image_index >= 1)
 {
 	if (part_ind == noone)
-		part_cloud();
+		part_cloud(_masked);
 }
 else
 {
@@ -431,6 +443,7 @@ var _collisions = CheckSolid();
 
 if (p_spinto_count > 0)
 {
+	anim_shake = 1;
     p_spinto_count -= 1
 }
 
