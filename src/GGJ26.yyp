@@ -2,8 +2,8 @@
   "$GMProject":"v1",
   "%Name":"GGJ26",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
-    {"$GMAudioGroup":"","%Name":"effetti_sonori","name":"effetti_sonori","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"effetti_sonori","exportDir":"","name":"effetti_sonori","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[
@@ -91,6 +91,7 @@
     {"id":{"name":"obj_player_arrow","path":"objects/obj_player_arrow/obj_player_arrow.yy",},},
     {"id":{"name":"obj_player_mad","path":"objects/obj_player_mad/obj_player_mad.yy",},},
     {"id":{"name":"obj_pot","path":"objects/obj_pot/obj_pot.yy",},},
+    {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
     {"id":{"name":"obj_switch","path":"objects/obj_switch/obj_switch.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},
@@ -236,6 +237,7 @@
     {"id":{"name":"spr_portrait_player","path":"sprites/spr_portrait_player/spr_portrait_player.yy",},},
     {"id":{"name":"spr_portraitframe","path":"sprites/spr_portraitframe/spr_portraitframe.yy",},},
     {"id":{"name":"spr_pot","path":"sprites/spr_pot/spr_pot.yy",},},
+    {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},},
     {"id":{"name":"spr_switch","path":"sprites/spr_switch/spr_switch.yy",},},
     {"id":{"name":"spr_tasti_nin","path":"sprites/spr_tasti_nin/spr_tasti_nin.yy",},},
     {"id":{"name":"spr_tasti_sony","path":"sprites/spr_tasti_sony/spr_tasti_sony.yy",},},
