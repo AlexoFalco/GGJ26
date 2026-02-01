@@ -892,7 +892,8 @@ function scr_impostazioni_draw()
 
 function riconoscimenti_draw(){
 	var _guix = display_get_gui_width(), _guiy = display_get_gui_height(),
-	_credits = "Game developed for the\n2026 Edition of the Global Game Jam\n\nProgrammers\nAlexoFalco\nMyMadnessWorks\nZigoon\n\nGraphic design\nLeira\nLorenzo\n\nMusic\nnMyMadnessWorks";
-	draw_text_border(_guix/2,5*_guiy/7,font_text,_credits,,,,,,1000);
+	_credits = ["Game developed for the\n2026 Edition of the Global Game Jam\n\nProgrammers\nAlexoFalco\nMyMadnessWorks\nZigoon\n\nGraphic design\nLeira\nLorenzo\n\nSound design\nMyMadnessWorks",
+	"Gioco sviluppato per la\nGlobal Game Jam (edizione 2026)\n\nProgrammatori\nAlexoFalco\nMyMadnessWorks\nZigoon\n\nDesign grafico\nLeira\nLorenzo\n\nMusica e SFX\nMyMadnessWorks"];
+	draw_text_border(_guix/2,5*_guiy/7,font_text,_credits[global.language],,,,,,1000);
 }
 #endregion
