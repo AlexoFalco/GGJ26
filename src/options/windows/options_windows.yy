@@ -6,6 +6,12 @@
       "option_windows_start_fullscreen":"true",
       "option_windows_display_cursor":"false",
       "option_windows_interpolate_pixels":"true",
+      "option_windows_description_info":"A GGJ2026 game",
+      "option_windows_product_info":"Muscle Masquerade",
+      "option_windows_company_info":"La Squadra Mucca",
+      "option_windows_executable_name":"Muscle Masquerade.exe",
+      "option_windows_display_name":"Muscle Masquerade",
+      "option_windows_icon":"icons/icon.ico",
     },
     "Alexo":{
       "option_windows_start_fullscreen":"false",

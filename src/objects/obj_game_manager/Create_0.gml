@@ -17,6 +17,6 @@ if (release_mode_check(RELEASE_MODE_ENUMS.GIOCO, RELEASE_MODE_ENUMS.ALEXO))
 	alarm[0] = 120;
 }
 audio_stop_all();
-//music_ref = audio_play_sound(music_game, 1, true)
+music_ref = audio_play_sound(music_game, 1, true)
 
 flag_victory = false
