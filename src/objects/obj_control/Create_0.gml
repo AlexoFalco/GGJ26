@@ -48,7 +48,7 @@ tempo_prima_scatola = time_source_create
 	time_source_game,540,time_source_units_frames,crea_scatola
 )
 
-if room = room_game //cambia quando mergi il gioco in room != room_title, I guess?
+if room = room_arena //cambia quando mergi il gioco in room != room_title, I guess?
 {
 	time_source_start(tempo_prima_maschera);
 	time_source_start(tempo_prima_scatola);
