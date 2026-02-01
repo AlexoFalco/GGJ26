@@ -8,5 +8,6 @@ if (release_mode_check(RELEASE_MODE_ENUMS.ALEXO))
     }
 }
 
-if (instance_exists(obj_mask) == false)
-{instance_create_layer(room_width/2, room_height/2, "Instances", obj_mask)}
+
+//if (instance_exists(obj_mask) == false)
+//{instance_create_layer(room_width/2, room_height/2, "Instances", obj_mask)}

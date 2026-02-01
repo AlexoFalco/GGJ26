@@ -9,5 +9,5 @@ draw_set_alpha(1);
 //scr_ombre(spr_mask,,id_mask);
 var c = c_white;
 if is_touchable
-	c = c_red;
+	c = c_orange;
 draw_sprite_ext(spr_mask,id_mask,x,y,image_xscale,image_yscale,image_angle,c,image_alpha);

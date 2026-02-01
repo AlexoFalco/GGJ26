@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_game_manager",
+  "%Name":"obj_mask_ishere",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_game_manager",
+  "name":"obj_mask_ishere",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game",
-    "path":"folders/Game.yy",
+    "name":"mad",
+    "path":"folders/mad.yy",
   },
   "parentObjectId":null,
   "persistent":false,
