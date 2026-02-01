@@ -1,7 +1,7 @@
 scr_inizio_globale();
 //script specifici per il gioco della GGJ26
 
-timeSessionBase = 17999;
+timeSessionBase = 7199;//17999;
 timeSession = timeSessionBase; //il tempo di una partita senza che vengano modificate le impostazioni
 
 startedSession = false

@@ -28,8 +28,8 @@ function CheckSolid() {
 
 	var _list = ds_list_create();
 	//var _coll = collision_rectangle_list(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_collider, true, false, _list, false);
-	var _coll = collision_circle_list(x, y, 256, obj_collider, true, false, _list, false);
-	var _coll2 = collision_circle_list(x, y, 256, obj_player_mad, true, false, _list, false);
+	var _coll = collision_circle_list(x, y, 500, obj_collider, true, false, _list, false);
+	var _coll2 = collision_circle_list(x, y, 500, obj_player_mad, true, false, _list, false);
 	
 	if (_coll > 0)
 	{
