@@ -1,7 +1,7 @@
 var vw = 1920;
 var vh = 1080;
 display_set_gui_size(vw, vh);
-draw_set_font(font_title);
+draw_set_font(font_subtitle);
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
