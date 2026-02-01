@@ -1,5 +1,5 @@
 //disegna_musica(global.guih/2-90,70,130);
-if room = room_game
+if room = room_arena
 {
 	if startedSession
 	{
@@ -23,6 +23,7 @@ if room = room_game
 	}
 }
 
-
+if room = room_riconoscimenti
+	riconoscimenti_draw();
 	
 	
