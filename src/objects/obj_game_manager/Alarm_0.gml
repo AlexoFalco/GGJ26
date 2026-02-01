@@ -6,17 +6,21 @@ if (!instance_exists(obj_mask_ishere))
 var xx = room_width/2;
 var yy = room_height/2;
 
-if (instance_exists(obj_mask_spot))
+if (mask_isfirst)
 {
-	var num = irandom(instance_number(obj_mask_spot));
-	var _id = noone;
-	with (obj_mask_spot)
+	mask_isfirst = false;
+	if (instance_exists(obj_mask_spot))
 	{
-		if (tag == num)
+		var num = irandom(instance_number(obj_mask_spot));
+		var _id = noone;
+		with (obj_mask_spot)
 		{
-			xx = x;
-			yy = y;
-			break;	
+			if (tag == num)
+			{
+				xx = x;
+				yy = y;
+				break;	
+			}
 		}
 	}
 }

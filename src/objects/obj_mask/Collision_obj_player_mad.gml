@@ -19,6 +19,8 @@ with other		//se sposti in obj_player, cancella
 			time_source_game,tempo_trasformazione,time_source_units_frames,
 			function(){
 				transformation = 0;
+				if (instance_exists(obj_game_manager))
+					obj_game_manager.alarm[0] = 120;
 			}
 		)
 		time_source_start(tempo_detrasformazione);

@@ -8,4 +8,4 @@ if (do_disappear)
 	image_alpha-=0.05;
 }
 if (instance_exists(obj_mask))
-depth = obj_mask.depth+10;
+	depth = obj_mask.depth+10;
