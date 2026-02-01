@@ -96,6 +96,7 @@
     {"id":{"name":"room_lobby","path":"rooms/room_lobby/room_lobby.yy",},},
     {"id":{"name":"room_menu_gameoptions","path":"rooms/room_menu_gameoptions/room_menu_gameoptions.yy",},},
     {"id":{"name":"room_menu_main","path":"rooms/room_menu_main/room_menu_main.yy",},},
+    {"id":{"name":"room_riconoscimenti","path":"rooms/room_riconoscimenti/room_riconoscimenti.yy",},},
     {"id":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
     {"id":{"name":"room_test_alexo","path":"rooms/room_test_alexo/room_test_alexo.yy",},},
     {"id":{"name":"room_test_camera","path":"rooms/room_test_camera/room_test_camera.yy",},},
@@ -243,6 +244,7 @@
     {"roomId":{"name":"room_test_alexo","path":"rooms/room_test_alexo/room_test_alexo.yy",},},
     {"roomId":{"name":"room_arena","path":"rooms/room_arena/room_arena.yy",},},
     {"roomId":{"name":"room_settings","path":"rooms/room_settings/room_settings.yy",},},
+    {"roomId":{"name":"room_riconoscimenti","path":"rooms/room_riconoscimenti/room_riconoscimenti.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
