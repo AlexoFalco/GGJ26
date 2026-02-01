@@ -156,6 +156,7 @@
     {"id":{"name":"spr_lobby","path":"sprites/spr_lobby/spr_lobby.yy",},},
     {"id":{"name":"spr_mask","path":"sprites/spr_mask/spr_mask.yy",},},
     {"id":{"name":"spr_menu_main","path":"sprites/spr_menu_main/spr_menu_main.yy",},},
+    {"id":{"name":"spr_menu_title_mask","path":"sprites/spr_menu_title_mask/spr_menu_title_mask.yy",},},
     {"id":{"name":"spr_menu_title","path":"sprites/spr_menu_title/spr_menu_title.yy",},},
     {"id":{"name":"spr_mucca","path":"sprites/spr_mucca/spr_mucca.yy",},},
     {"id":{"name":"spr_mud","path":"sprites/spr_mud/spr_mud.yy",},},
